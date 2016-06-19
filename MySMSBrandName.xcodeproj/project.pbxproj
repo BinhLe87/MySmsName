@@ -7,25 +7,56 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AB2397161D1642E000BCFF97 /* UserDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = AB2397151D1642E000BCFF97 /* UserDAO.m */; };
+		AB2397191D16531F00BCFF97 /* RestKitDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = AB2397181D16531F00BCFF97 /* RestKitDAO.m */; };
+		AB23971B1D16878B00BCFF97 /* SmsProgCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB23971A1D16878B00BCFF97 /* SmsProgCell.xib */; };
+		AB23971E1D1687B500BCFF97 /* SmsProgCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AB23971D1D1687B500BCFF97 /* SmsProgCell.m */; };
 		AB4905311D13F06600265A3A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AB4905301D13F06600265A3A /* main.m */; };
 		AB4905341D13F06600265A3A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AB4905331D13F06600265A3A /* AppDelegate.m */; };
-		AB4905371D13F06600265A3A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB4905361D13F06600265A3A /* ViewController.m */; };
 		AB49053A1D13F06600265A3A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB4905381D13F06600265A3A /* Main.storyboard */; };
 		AB49053C1D13F06600265A3A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB49053B1D13F06600265A3A /* Assets.xcassets */; };
 		AB49053F1D13F06600265A3A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB49053D1D13F06600265A3A /* LaunchScreen.storyboard */; };
+		AB49054D1D13F1E100265A3A /* LoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB49054C1D13F1E100265A3A /* LoginView.xib */; };
+		AB4905561D13F59D00265A3A /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB4905551D13F59D00265A3A /* LoginViewController.m */; };
+		AB8A20BF1D1407A200009EE0 /* MyUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = AB8A20BE1D1407A200009EE0 /* MyUtil.m */; };
+		AB8A20C11D140D9200009EE0 /* libRestKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AB8A20C01D140D9200009EE0 /* libRestKit.a */; };
+		AB8A20C31D140DF000009EE0 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB8A20C21D140DF000009EE0 /* MobileCoreServices.framework */; };
+		AB8A20C51D140DF900009EE0 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB8A20C41D140DF900009EE0 /* CFNetwork.framework */; };
+		AB8A20C71D140E0100009EE0 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB8A20C61D140E0100009EE0 /* Security.framework */; };
+		AB8A20C91D140E3400009EE0 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB8A20C81D140E3400009EE0 /* CoreData.framework */; };
+		AE904D4A62B4860B9FFB71E8 /* libPods-MySMSBrandName.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D9FA24C8782EA46649B88DC2 /* libPods-MySMSBrandName.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9594A8679593FBAACA01A49F /* Pods-MySMSBrandName.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MySMSBrandName.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MySMSBrandName/Pods-MySMSBrandName.debug.xcconfig"; sourceTree = "<group>"; };
+		AB2397141D1642E000BCFF97 /* UserDAO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDAO.h; sourceTree = "<group>"; };
+		AB2397151D1642E000BCFF97 /* UserDAO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDAO.m; sourceTree = "<group>"; };
+		AB2397171D16531F00BCFF97 /* RestKitDAO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestKitDAO.h; sourceTree = "<group>"; };
+		AB2397181D16531F00BCFF97 /* RestKitDAO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestKitDAO.m; sourceTree = "<group>"; };
+		AB23971A1D16878B00BCFF97 /* SmsProgCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SmsProgCell.xib; sourceTree = "<group>"; };
+		AB23971C1D1687B500BCFF97 /* SmsProgCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SmsProgCell.h; sourceTree = "<group>"; };
+		AB23971D1D1687B500BCFF97 /* SmsProgCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SmsProgCell.m; sourceTree = "<group>"; };
 		AB49052C1D13F06600265A3A /* MySMSBrandName.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MySMSBrandName.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB4905301D13F06600265A3A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		AB4905321D13F06600265A3A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		AB4905331D13F06600265A3A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		AB4905351D13F06600265A3A /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		AB4905361D13F06600265A3A /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		AB4905391D13F06600265A3A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AB49053B1D13F06600265A3A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AB49053E1D13F06600265A3A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AB4905401D13F06600265A3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AB4905481D13F17E00265A3A /* Constant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constant.h; sourceTree = "<group>"; };
+		AB49054C1D13F1E100265A3A /* LoginView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginView.xib; sourceTree = "<group>"; };
+		AB4905541D13F59D00265A3A /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		AB4905551D13F59D00265A3A /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		AB8A20BD1D1407A200009EE0 /* MyUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyUtil.h; sourceTree = "<group>"; };
+		AB8A20BE1D1407A200009EE0 /* MyUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyUtil.m; sourceTree = "<group>"; };
+		AB8A20C01D140D9200009EE0 /* libRestKit.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libRestKit.a; path = "../../../../../Library/Developer/Xcode/DerivedData/MySMSBrandName-aofiyhfriphnzgdptowojxblgowt/Build/Products/Debug-iphonesimulator/libRestKit.a"; sourceTree = "<group>"; };
+		AB8A20C21D140DF000009EE0 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		AB8A20C41D140DF900009EE0 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		AB8A20C61D140E0100009EE0 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		AB8A20C81D140E3400009EE0 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		C56D4361F935563D07A3CAE1 /* Pods-MySMSBrandName.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MySMSBrandName.release.xcconfig"; path = "Pods/Target Support Files/Pods-MySMSBrandName/Pods-MySMSBrandName.release.xcconfig"; sourceTree = "<group>"; };
+		D9FA24C8782EA46649B88DC2 /* libPods-MySMSBrandName.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MySMSBrandName.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +64,47 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB8A20C91D140E3400009EE0 /* CoreData.framework in Frameworks */,
+				AB8A20C71D140E0100009EE0 /* Security.framework in Frameworks */,
+				AB8A20C51D140DF900009EE0 /* CFNetwork.framework in Frameworks */,
+				AB8A20C31D140DF000009EE0 /* MobileCoreServices.framework in Frameworks */,
+				AB8A20C11D140D9200009EE0 /* libRestKit.a in Frameworks */,
+				AE904D4A62B4860B9FFB71E8 /* libPods-MySMSBrandName.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		32B3FEEC61C5E4AAC025A98C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9594A8679593FBAACA01A49F /* Pods-MySMSBrandName.debug.xcconfig */,
+				C56D4361F935563D07A3CAE1 /* Pods-MySMSBrandName.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		5E158298E6369B49D5B41F75 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AB8A20C81D140E3400009EE0 /* CoreData.framework */,
+				AB8A20C61D140E0100009EE0 /* Security.framework */,
+				AB8A20C41D140DF900009EE0 /* CFNetwork.framework */,
+				AB8A20C21D140DF000009EE0 /* MobileCoreServices.framework */,
+				AB8A20C01D140D9200009EE0 /* libRestKit.a */,
+				D9FA24C8782EA46649B88DC2 /* libPods-MySMSBrandName.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		AB4905231D13F06600265A3A = {
 			isa = PBXGroup;
 			children = (
 				AB49052E1D13F06600265A3A /* MySMSBrandName */,
 				AB49052D1D13F06600265A3A /* Products */,
+				32B3FEEC61C5E4AAC025A98C /* Pods */,
+				5E158298E6369B49D5B41F75 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,10 +119,13 @@
 		AB49052E1D13F06600265A3A /* MySMSBrandName */ = {
 			isa = PBXGroup;
 			children = (
+				AB8A20BC1D14078400009EE0 /* Util */,
+				AB49054B1D13F1B700265A3A /* Controller */,
+				AB49054A1D13F1B100265A3A /* View */,
+				AB4905491D13F1A900265A3A /* Model */,
+				AB4905461D13F13A00265A3A /* Classes */,
 				AB4905321D13F06600265A3A /* AppDelegate.h */,
 				AB4905331D13F06600265A3A /* AppDelegate.m */,
-				AB4905351D13F06600265A3A /* ViewController.h */,
-				AB4905361D13F06600265A3A /* ViewController.m */,
 				AB4905381D13F06600265A3A /* Main.storyboard */,
 				AB49053B1D13F06600265A3A /* Assets.xcassets */,
 				AB49053D1D13F06600265A3A /* LaunchScreen.storyboard */,
@@ -79,6 +143,54 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		AB4905461D13F13A00265A3A /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				AB4905481D13F17E00265A3A /* Constant.h */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		AB4905491D13F1A900265A3A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AB2397141D1642E000BCFF97 /* UserDAO.h */,
+				AB2397151D1642E000BCFF97 /* UserDAO.m */,
+				AB2397171D16531F00BCFF97 /* RestKitDAO.h */,
+				AB2397181D16531F00BCFF97 /* RestKitDAO.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		AB49054A1D13F1B100265A3A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AB49054C1D13F1E100265A3A /* LoginView.xib */,
+				AB23971A1D16878B00BCFF97 /* SmsProgCell.xib */,
+				AB23971C1D1687B500BCFF97 /* SmsProgCell.h */,
+				AB23971D1D1687B500BCFF97 /* SmsProgCell.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		AB49054B1D13F1B700265A3A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				AB4905541D13F59D00265A3A /* LoginViewController.h */,
+				AB4905551D13F59D00265A3A /* LoginViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		AB8A20BC1D14078400009EE0 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				AB8A20BD1D1407A200009EE0 /* MyUtil.h */,
+				AB8A20BE1D1407A200009EE0 /* MyUtil.m */,
+			);
+			name = Util;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -86,9 +198,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AB4905431D13F06600265A3A /* Build configuration list for PBXNativeTarget "MySMSBrandName" */;
 			buildPhases = (
+				B1D6A5C0D015F44631034276 /* Check Pods Manifest.lock */,
 				AB4905281D13F06600265A3A /* Sources */,
 				AB4905291D13F06600265A3A /* Frameworks */,
 				AB49052A1D13F06600265A3A /* Resources */,
+				BCFDD1CB63F0DFDCBE0F6D08 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -137,21 +251,60 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB49053F1D13F06600265A3A /* LaunchScreen.storyboard in Resources */,
+				AB49054D1D13F1E100265A3A /* LoginView.xib in Resources */,
 				AB49053C1D13F06600265A3A /* Assets.xcassets in Resources */,
 				AB49053A1D13F06600265A3A /* Main.storyboard in Resources */,
+				AB23971B1D16878B00BCFF97 /* SmsProgCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B1D6A5C0D015F44631034276 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		BCFDD1CB63F0DFDCBE0F6D08 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MySMSBrandName/Pods-MySMSBrandName-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		AB4905281D13F06600265A3A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AB4905371D13F06600265A3A /* ViewController.m in Sources */,
 				AB4905341D13F06600265A3A /* AppDelegate.m in Sources */,
+				AB2397191D16531F00BCFF97 /* RestKitDAO.m in Sources */,
 				AB4905311D13F06600265A3A /* main.m in Sources */,
+				AB4905561D13F59D00265A3A /* LoginViewController.m in Sources */,
+				AB2397161D1642E000BCFF97 /* UserDAO.m in Sources */,
+				AB23971E1D1687B500BCFF97 /* SmsProgCell.m in Sources */,
+				AB8A20BF1D1407A200009EE0 /* MyUtil.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,10 +414,34 @@
 		};
 		AB4905441D13F06600265A3A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9594A8679593FBAACA01A49F /* Pods-MySMSBrandName.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MySMSBrandName/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"AFNetworking\"",
+					"-l\"ISO8601DateFormatterValueTransformer\"",
+					"-l\"RKValueTransformers\"",
+					"-l\"RestKit\"",
+					"-l\"SOCKit\"",
+					"-l\"TransitionKit\"",
+					"-framework",
+					"\"CFNetwork\"",
+					"-framework",
+					"\"CoreData\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-all_load",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = vb.MySMSBrandName;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -272,10 +449,34 @@
 		};
 		AB4905451D13F06600265A3A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C56D4361F935563D07A3CAE1 /* Pods-MySMSBrandName.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MySMSBrandName/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"AFNetworking\"",
+					"-l\"ISO8601DateFormatterValueTransformer\"",
+					"-l\"RKValueTransformers\"",
+					"-l\"RestKit\"",
+					"-l\"SOCKit\"",
+					"-l\"TransitionKit\"",
+					"-framework",
+					"\"CFNetwork\"",
+					"-framework",
+					"\"CoreData\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-all_load",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = vb.MySMSBrandName;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -300,6 +501,7 @@
 				AB4905451D13F06600265A3A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

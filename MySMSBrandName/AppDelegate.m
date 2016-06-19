@@ -7,6 +7,10 @@
 //
 
 #import "AppDelegate.h"
+#import "LoginViewController.h"
+#import "MyUtil.h"
+#import <RestKit/RestKit.h>
+#import "RestKitDAO.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +21,17 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+    LoginViewController *loginVC = [[LoginViewController alloc] init];
+    
+    self.window.rootViewController = loginVC;
+    
+    //Configure RestKit
+    RestKitDAO *objRestKitDAO = [[RestKitDAO alloc] init];
+    [objRestKitDAO configureRestKit];
+    
     return YES;
 }
 
