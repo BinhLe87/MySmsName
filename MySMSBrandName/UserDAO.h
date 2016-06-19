@@ -14,4 +14,5 @@
 @property (nonatomic) NSString *userName;
 @property (nonatomic) NSString *token;
 @property (nonatomic) int errorCode;
+@property (nonatomic) NSString *message;
 @end

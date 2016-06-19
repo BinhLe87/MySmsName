@@ -11,6 +11,7 @@
 		AB2397191D16531F00BCFF97 /* RestKitDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = AB2397181D16531F00BCFF97 /* RestKitDAO.m */; };
 		AB23971B1D16878B00BCFF97 /* SmsProgCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB23971A1D16878B00BCFF97 /* SmsProgCell.xib */; };
 		AB23971E1D1687B500BCFF97 /* SmsProgCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AB23971D1D1687B500BCFF97 /* SmsProgCell.m */; };
+		AB4425431D17010200D8FA86 /* SmsProgViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB4425421D17010200D8FA86 /* SmsProgViewController.m */; };
 		AB4905311D13F06600265A3A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AB4905301D13F06600265A3A /* main.m */; };
 		AB4905341D13F06600265A3A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AB4905331D13F06600265A3A /* AppDelegate.m */; };
 		AB49053A1D13F06600265A3A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB4905381D13F06600265A3A /* Main.storyboard */; };
@@ -36,6 +37,8 @@
 		AB23971A1D16878B00BCFF97 /* SmsProgCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SmsProgCell.xib; sourceTree = "<group>"; };
 		AB23971C1D1687B500BCFF97 /* SmsProgCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SmsProgCell.h; sourceTree = "<group>"; };
 		AB23971D1D1687B500BCFF97 /* SmsProgCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SmsProgCell.m; sourceTree = "<group>"; };
+		AB4425411D17010200D8FA86 /* SmsProgViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SmsProgViewController.h; sourceTree = "<group>"; };
+		AB4425421D17010200D8FA86 /* SmsProgViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SmsProgViewController.m; sourceTree = "<group>"; };
 		AB49052C1D13F06600265A3A /* MySMSBrandName.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MySMSBrandName.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB4905301D13F06600265A3A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		AB4905321D13F06600265A3A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -178,6 +181,8 @@
 			children = (
 				AB4905541D13F59D00265A3A /* LoginViewController.h */,
 				AB4905551D13F59D00265A3A /* LoginViewController.m */,
+				AB4425411D17010200D8FA86 /* SmsProgViewController.h */,
+				AB4425421D17010200D8FA86 /* SmsProgViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -302,6 +307,7 @@
 				AB2397191D16531F00BCFF97 /* RestKitDAO.m in Sources */,
 				AB4905311D13F06600265A3A /* main.m in Sources */,
 				AB4905561D13F59D00265A3A /* LoginViewController.m in Sources */,
+				AB4425431D17010200D8FA86 /* SmsProgViewController.m in Sources */,
 				AB2397161D1642E000BCFF97 /* UserDAO.m in Sources */,
 				AB23971E1D1687B500BCFF97 /* SmsProgCell.m in Sources */,
 				AB8A20BF1D1407A200009EE0 /* MyUtil.m in Sources */,

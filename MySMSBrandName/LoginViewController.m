@@ -9,7 +9,7 @@
 #import "LoginViewController.h"
 #import <RestKit/RestKit.h>
 #import "Constant.h"
-
+#import "SmsProgViewController.h"
 
 @interface LoginViewController ()
 
@@ -49,13 +49,28 @@
     
     [[RKObjectManager sharedManager] postObject:nil path:API_SIGNIN parameters:queryParams success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
         _account  = mappingResult.firstObject;
+        _statusLabel.hidden = false;
         
+        
+        if (_account.errorCode == 0) {
            NSLog(@"Login thanh cong!!!");
         
-        _statusLabel.hidden = false;
+        
         
         [_statusLabel setText:[NSString stringWithFormat:@"Token is %@", _account.token]];
         NSLog(@"Token is %@", _account.token);
+        
+        //Present SmsProgViewController
+        SmsProgViewController *smsProgViewController = [[SmsProgViewController alloc] init];
+        [self presentViewController:smsProgViewController animated:TRUE completion:^{
+            NSLog(@"Da hien thi VC moi");
+        }];
+        } else {
+            
+            
+            [_statusLabel setText:[NSString stringWithFormat:@"Login failed caused by %@", _account.message]];
+        }
+        
        
     } failure:^(RKObjectRequestOperation *operation, NSError *error) {
         NSLog(@"Error: Account not found %@", error);

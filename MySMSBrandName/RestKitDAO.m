@@ -24,7 +24,7 @@
     
     // setup object mappings
     RKObjectMapping *userMapping = [RKObjectMapping mappingForClass:[UserDAO class]];
-    [userMapping addAttributeMappingsFromArray:@[@"userName", @"token", @"errorCode"]];
+    [userMapping addAttributeMappingsFromArray:@[@"userName", @"token", @"errorCode", @"message"]];
     
     // register mappings with the provider using a response descriptor
     RKResponseDescriptor *responseDescriptor =
