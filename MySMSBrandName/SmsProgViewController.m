@@ -11,6 +11,7 @@
 #import "Constant.h"
 #import "smsProgList.h"
 #import "smsProg.h"
+#import "SmsProgCell.h"
 
 @interface SmsProgViewController ()
 
@@ -28,10 +29,6 @@
     [self.tableView registerNib:smsProgCellNib forCellReuseIdentifier:@"SmsProgCell"];
     
     [self loadSmsProgs:1 pageSize:10];
-    
-    smsProg *prog = (smsProg *)[_smsProgs.smsProgs objectAtIndex:1];
-    
-    NSLog(@"gia tri la %@", prog.prog_code);
 }
 
 - (void)didReceiveMemoryWarning {
@@ -48,38 +45,61 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 #warning Incomplete implementation, return the number of rows
-    return 1;
+    return _smsProgs.smsProgArr.count;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SmsProgCell" forIndexPath:indexPath];
+    
+    SmsProgCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SmsProgCell" forIndexPath:indexPath];
+
+    smsProg *objSmsProg = [_smsProgs.smsProgArr objectAtIndex:indexPath.section];
     
     // Configure the cell...
+    cell.progCodeLbl.text = objSmsProg.prog_code;
+    cell.progStatLbl.text = [NSString stringWithFormat:@"Trạng thái: %@", objSmsProg.status];
+    cell.progAliasLbl.text = objSmsProg.alias;
+    cell.progCreatedDateLbl.text = objSmsProg.created_date;
     
     return cell;
 }
 
-- (smsProgList *)loadSmsProgs:(int)pageID pageSize:(int)pageSize {
+- (void)loadSmsProgs:(int)pageID pageSize:(int)pageSize {
     
-    __block smsProgList *smsProgArr = nil;
-    
-    
-    self.fetchCompletedBlock = ^ (RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
-        
-        _smsProgs = (smsProgList *) mappingResult.firstObject;
-    };
-    
+//    NSURL *aUrl = [NSURL URLWithString:@"http://203.190.170.41:9669/getMessageProgs"];
+//    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:aUrl
+//                                                           cachePolicy:NSURLRequestUseProtocolCachePolicy
+//                                                       timeoutInterval:60.0];
+//    
+//    [request setHTTPMethod:@"POST"];
+//    NSString *postString = [NSString stringWithFormat:@"page_id=%d&page_size=%d&token=%@", pageID, pageSize, _token];
+//    [request setHTTPBody:[postString dataUsingEncoding:NSUTF8StringEncoding]];
+//    
+//    RKObjectRequestOperation *operation = [[RKObjectManager sharedManager] objectRequestOperationWithRequest:request success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+//        
+//    } failure:^(RKObjectRequestOperation *operation, NSError *error) {
+//        
+//    }];
     
     NSDictionary *params = @{@"token":  _token, @"page_id": [NSNumber numberWithInt:pageID], @"page_size": [NSNumber numberWithInt:pageSize]};
-   
-     [[RKObjectManager sharedManager] postObject:nil path:API_GET_MESSAGE_PROGRESS parameters:params success:_fetchCompletedBlock failure:^(RKObjectRequestOperation *operation, NSError *error) {
-         
-     }];
+    RKObjectRequestOperation *operation = [[RKObjectManager sharedManager] appropriateObjectRequestOperationWithObject:nil method:RKRequestMethodPOST path:API_GET_MESSAGE_PROGRESS parameters:params];
+    [operation setCompletionBlockWithSuccess:nil failure:nil];
+   // [[RKObjectManager sharedManager] enqueueObjectRequestOperation:operation];
+
     
-    return smsProgArr;
+    [operation start];
+    [operation waitUntilFinished];
+    
+    if (!operation.error) {
+        
+        _smsProgs = (smsProgList *) [operation.mappingResult firstObject];
+    }
 }
 
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    return 80;
+}
 
 
 

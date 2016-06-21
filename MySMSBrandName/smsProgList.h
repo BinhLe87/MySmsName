@@ -13,6 +13,6 @@
 @property(nonatomic) NSString *errorCode;
 @property(nonatomic) NSString *message;
 @property(nonatomic) NSNumber *pageTotal;
-@property(nonatomic) NSMutableArray *smsProgs;
+@property(nonatomic) NSMutableArray *smsProgArr;
 
 @end

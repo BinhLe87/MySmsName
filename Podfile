@@ -3,6 +3,7 @@
 
 def sharedpods
 pod 'RestKit', '~> 0.24.0'
+pod 'RKValueTransformers'
 end
 
 target 'MySMSBrandName' do

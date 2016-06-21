@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "98553FB2C15CE7B7652C17CC"
+               BlueprintIdentifier = "4F0E2B6D53AA822136C36967"
                BuildableName = "libPods-MySMSBrandName.a"
                BlueprintName = "Pods-MySMSBrandName"
                ReferencedContainer = "container:Pods.xcodeproj">

@@ -15,7 +15,7 @@
 @property(nonatomic) NSString *prog_code;
 @property(nonatomic) NSString *alias;
 @property(nonatomic) NSString *status;
-@property(nonatomic) NSDate *created_date;
+@property(nonatomic) NSString *created_date;
 @property(nonatomic) NSString *content;
 @property(nonatomic) NSNumber *progType;
 @property(nonatomic) NSNumber *totalSub;

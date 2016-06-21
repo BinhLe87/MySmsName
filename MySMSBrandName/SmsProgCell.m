@@ -9,12 +9,7 @@
 #import "SmsProgCell.h"
 
 @interface SmsProgCell()
-@property (weak, nonatomic) IBOutlet UILabel *progCodeLbl;
 
-@property (weak, nonatomic) IBOutlet UILabel *progStatLbl;
-
-@property (weak, nonatomic) IBOutlet UILabel *progAliasLbl;
-@property (weak, nonatomic) IBOutlet UILabel *progCreatedDateLbl;
 
 @end
 
@@ -31,5 +26,7 @@
 
     // Configure the view for the selected state
 }
+
+
 
 @end

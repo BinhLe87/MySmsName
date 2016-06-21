@@ -17,6 +17,6 @@
 
 
 
-- (NSMutableArray*) loadSmsProgs:(int)pageID pageSize:(int)pageSize;
+- (void) loadSmsProgs:(int)pageID pageSize:(int)pageSize;
 
 @end

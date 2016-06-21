@@ -10,6 +10,11 @@
 
 @interface SmsProgCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UILabel *progCodeLbl;
 
+@property (weak, nonatomic) IBOutlet UILabel *progStatLbl;
+
+@property (weak, nonatomic) IBOutlet UILabel *progAliasLbl;
+@property (weak, nonatomic) IBOutlet UILabel *progCreatedDateLbl;
 
 @end
