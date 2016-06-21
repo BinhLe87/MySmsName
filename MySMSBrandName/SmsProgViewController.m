@@ -7,9 +7,14 @@
 //
 
 #import "SmsProgViewController.h"
+#import <RestKit/RestKit.h>
+#import "Constant.h"
+#import "smsProgList.h"
+#import "smsProg.h"
 
 @interface SmsProgViewController ()
 
+@property (nonatomic) void (^fetchCompletedBlock)(RKObjectRequestOperation *operation, RKMappingResult *mappingResult);
 @end
 
 @implementation SmsProgViewController
@@ -22,6 +27,11 @@
     
     [self.tableView registerNib:smsProgCellNib forCellReuseIdentifier:@"SmsProgCell"];
     
+    [self loadSmsProgs:1 pageSize:10];
+    
+    smsProg *prog = (smsProg *)[_smsProgs.smsProgs objectAtIndex:1];
+    
+    NSLog(@"gia tri la %@", prog.prog_code);
 }
 
 - (void)didReceiveMemoryWarning {
@@ -49,6 +59,28 @@
     
     return cell;
 }
+
+- (smsProgList *)loadSmsProgs:(int)pageID pageSize:(int)pageSize {
+    
+    __block smsProgList *smsProgArr = nil;
+    
+    
+    self.fetchCompletedBlock = ^ (RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+        
+        _smsProgs = (smsProgList *) mappingResult.firstObject;
+    };
+    
+    
+    NSDictionary *params = @{@"token":  _token, @"page_id": [NSNumber numberWithInt:pageID], @"page_size": [NSNumber numberWithInt:pageSize]};
+   
+     [[RKObjectManager sharedManager] postObject:nil path:API_GET_MESSAGE_PROGRESS parameters:params success:_fetchCompletedBlock failure:^(RKObjectRequestOperation *operation, NSError *error) {
+         
+     }];
+    
+    return smsProgArr;
+}
+
+
 
 
 /*

@@ -20,6 +20,7 @@
 
 @implementation SmsProgCell
 
+
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code

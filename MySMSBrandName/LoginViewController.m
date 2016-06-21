@@ -62,6 +62,7 @@
         
         //Present SmsProgViewController
         SmsProgViewController *smsProgViewController = [[SmsProgViewController alloc] init];
+            smsProgViewController.token = _account.token;
         [self presentViewController:smsProgViewController animated:TRUE completion:^{
             NSLog(@"Da hien thi VC moi");
         }];
