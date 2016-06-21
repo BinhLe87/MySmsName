@@ -7,7 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "smsProgList.h"
+
 
 @interface SmsProgViewController : UITableViewController
+
+@property (nonatomic, readwrite) smsProgList *smsProgs;
+@property (nonatomic) NSString *token;
+
+
+
+- (void) loadSmsProgs:(int)pageID pageSize:(int)pageSize;
 
 @end
