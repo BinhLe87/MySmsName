@@ -8,7 +8,6 @@
 
 #import "SmsProgViewController.h"
 #import <RestKit/RestKit.h>
-#import "Constant.h"
 #import "smsProgList.h"
 #import "smsProg.h"
 #import "SmsProgCell.h"
@@ -40,12 +39,12 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 #warning Incomplete implementation, return the number of sections
-    return 1;
+    return _smsProgs.smsProgArr.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 #warning Incomplete implementation, return the number of rows
-    return _smsProgs.smsProgArr.count;
+    return 1;
 }
 
 
@@ -53,7 +52,7 @@
     
     SmsProgCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SmsProgCell" forIndexPath:indexPath];
 
-    smsProg *objSmsProg = [_smsProgs.smsProgArr objectAtIndex:indexPath.section];
+    smsProg *objSmsProg = [_smsProgs.smsProgArr objectAtIndex:indexPath.row];
     
     // Configure the cell...
     cell.progCodeLbl.text = objSmsProg.prog_code;
@@ -101,6 +100,50 @@
     return 80;
 }
 
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    
+    return 30;
+}
+
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    
+    UILabel *sectionHeader = [[UILabel alloc] init];
+    sectionHeader.frame = CGRectMake(0, 0, tableView.frame.size.width, 23);
+    sectionHeader.font = [UIFont fontWithName:FONT_NAME size:FONT_SIZE]; 
+    
+    NSDateFormatter *dateTimeFormat = [[NSDateFormatter alloc] init];
+    [dateTimeFormat setDateFormat:@"dd/MM/yyyy HH:mm"];
+    
+    NSString *date = [[_smsProgs.smsProgArr objectAtIndex:section] valueForKey:@"created_date"];
+    NSCalendar *gregorianCalendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+    NSDateComponents *components = [gregorianCalendar components:NSCalendarUnitDay
+                                                        fromDate:[dateTimeFormat dateFromString:date]
+                                                          toDate:[NSDate date]
+                                                         options:NSCalendarWrapComponents];
+    
+    
+    if (components.day == 0) {
+        date = [NSString stringWithFormat:@"Hôm nay %@", date];
+    }
+    else if (components.day == 1) {
+        date = [NSString stringWithFormat:@"Hôm qua %@", date];
+    }
+    else {
+        date = [NSString stringWithFormat:@"Ngày %@", date];
+    }
+    
+    sectionHeader.textColor =  UIColorFromRGB(BLUE);
+    sectionHeader.text = date;
+    
+    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, [self tableView:tableView heightForHeaderInSection:section])];
+    [headerView addSubview:sectionHeader];
+    headerView.backgroundColor = UIColorFromRGB(BACKGROUND_COLOR);
+    sectionHeader.center = CGPointMake((tableView.frame.size.width) / 2 + 10, headerView.frame.size.height / 2);
+    
+    return headerView;
+
+    
+}
 
 
 /*

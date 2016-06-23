@@ -55,9 +55,6 @@
                                                          @"pageTotal": @"pageTotal"
                                                          }];
     
-   
-   
-    
     
     // Define the relationship mapping
     [smsProgListMapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:@"data"

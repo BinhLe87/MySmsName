@@ -21,6 +21,11 @@
 		AB49053F1D13F06600265A3A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB49053D1D13F06600265A3A /* LaunchScreen.storyboard */; };
 		AB49054D1D13F1E100265A3A /* LoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB49054C1D13F1E100265A3A /* LoginView.xib */; };
 		AB4905561D13F59D00265A3A /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB4905551D13F59D00265A3A /* LoginViewController.m */; };
+		AB7ED7FE1D1A456F00EE0E4D /* SmsProgDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB7ED7FD1D1A456F00EE0E4D /* SmsProgDetailViewController.m */; };
+		AB7ED8001D1A459300EE0E4D /* SmsProgDetail.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB7ED7FF1D1A459300EE0E4D /* SmsProgDetail.xib */; };
+		AB7ED8051D1A7FEB00EE0E4D /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AB7ED8021D1A7FEB00EE0E4D /* Roboto-Light.ttf */; };
+		AB7ED8061D1A7FEB00EE0E4D /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AB7ED8031D1A7FEB00EE0E4D /* Roboto-Medium.ttf */; };
+		AB7ED8071D1A7FEB00EE0E4D /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AB7ED8041D1A7FEB00EE0E4D /* Roboto-Regular.ttf */; };
 		AB8A20BF1D1407A200009EE0 /* MyUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = AB8A20BE1D1407A200009EE0 /* MyUtil.m */; };
 		AB8A20C11D140D9200009EE0 /* libRestKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AB8A20C01D140D9200009EE0 /* libRestKit.a */; };
 		AB8A20C31D140DF000009EE0 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB8A20C21D140DF000009EE0 /* MobileCoreServices.framework */; };
@@ -29,6 +34,18 @@
 		AB8A20C91D140E3400009EE0 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB8A20C81D140E3400009EE0 /* CoreData.framework */; };
 		AE904D4A62B4860B9FFB71E8 /* libPods-MySMSBrandName.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D9FA24C8782EA46649B88DC2 /* libPods-MySMSBrandName.a */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		AB7ED8091D1AA8D500EE0E4D /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 7;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		9594A8679593FBAACA01A49F /* Pods-MySMSBrandName.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MySMSBrandName.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MySMSBrandName/Pods-MySMSBrandName.debug.xcconfig"; sourceTree = "<group>"; };
@@ -57,6 +74,13 @@
 		AB49054C1D13F1E100265A3A /* LoginView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginView.xib; sourceTree = "<group>"; };
 		AB4905541D13F59D00265A3A /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		AB4905551D13F59D00265A3A /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		AB7ED7FC1D1A456F00EE0E4D /* SmsProgDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SmsProgDetailViewController.h; sourceTree = "<group>"; };
+		AB7ED7FD1D1A456F00EE0E4D /* SmsProgDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SmsProgDetailViewController.m; sourceTree = "<group>"; };
+		AB7ED7FF1D1A459300EE0E4D /* SmsProgDetail.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SmsProgDetail.xib; sourceTree = "<group>"; };
+		AB7ED8021D1A7FEB00EE0E4D /* Roboto-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Light.ttf"; sourceTree = "<group>"; };
+		AB7ED8031D1A7FEB00EE0E4D /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
+		AB7ED8041D1A7FEB00EE0E4D /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
+		AB7ED8081D1A8F9100EE0E4D /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		AB8A20BD1D1407A200009EE0 /* MyUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyUtil.h; sourceTree = "<group>"; };
 		AB8A20BE1D1407A200009EE0 /* MyUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyUtil.m; sourceTree = "<group>"; };
 		AB8A20C01D140D9200009EE0 /* libRestKit.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libRestKit.a; path = "../../../../../Library/Developer/Xcode/DerivedData/MySMSBrandName-aofiyhfriphnzgdptowojxblgowt/Build/Products/Debug-iphonesimulator/libRestKit.a"; sourceTree = "<group>"; };
@@ -128,6 +152,7 @@
 		AB49052E1D13F06600265A3A /* MySMSBrandName */ = {
 			isa = PBXGroup;
 			children = (
+				AB7ED8011D1A7FEB00EE0E4D /* Font */,
 				AB8A20BC1D14078400009EE0 /* Util */,
 				AB49054B1D13F1B700265A3A /* Controller */,
 				AB49054A1D13F1B100265A3A /* View */,
@@ -148,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				AB4905301D13F06600265A3A /* main.m */,
+				AB7ED8081D1A8F9100EE0E4D /* PrefixHeader.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -182,6 +208,7 @@
 				AB23971A1D16878B00BCFF97 /* SmsProgCell.xib */,
 				AB23971C1D1687B500BCFF97 /* SmsProgCell.h */,
 				AB23971D1D1687B500BCFF97 /* SmsProgCell.m */,
+				AB7ED7FF1D1A459300EE0E4D /* SmsProgDetail.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -193,8 +220,20 @@
 				AB4905551D13F59D00265A3A /* LoginViewController.m */,
 				AB4425411D17010200D8FA86 /* SmsProgViewController.h */,
 				AB4425421D17010200D8FA86 /* SmsProgViewController.m */,
+				AB7ED7FC1D1A456F00EE0E4D /* SmsProgDetailViewController.h */,
+				AB7ED7FD1D1A456F00EE0E4D /* SmsProgDetailViewController.m */,
 			);
 			name = Controller;
+			sourceTree = "<group>";
+		};
+		AB7ED8011D1A7FEB00EE0E4D /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				AB7ED8021D1A7FEB00EE0E4D /* Roboto-Light.ttf */,
+				AB7ED8031D1A7FEB00EE0E4D /* Roboto-Medium.ttf */,
+				AB7ED8041D1A7FEB00EE0E4D /* Roboto-Regular.ttf */,
+			);
+			path = Font;
 			sourceTree = "<group>";
 		};
 		AB8A20BC1D14078400009EE0 /* Util */ = {
@@ -218,6 +257,7 @@
 				AB4905291D13F06600265A3A /* Frameworks */,
 				AB49052A1D13F06600265A3A /* Resources */,
 				BCFDD1CB63F0DFDCBE0F6D08 /* Copy Pods Resources */,
+				AB7ED8091D1AA8D500EE0E4D /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -265,10 +305,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB7ED8061D1A7FEB00EE0E4D /* Roboto-Medium.ttf in Resources */,
 				AB49053F1D13F06600265A3A /* LaunchScreen.storyboard in Resources */,
 				AB49054D1D13F1E100265A3A /* LoginView.xib in Resources */,
 				AB49053C1D13F06600265A3A /* Assets.xcassets in Resources */,
 				AB49053A1D13F06600265A3A /* Main.storyboard in Resources */,
+				AB7ED8051D1A7FEB00EE0E4D /* Roboto-Light.ttf in Resources */,
+				AB7ED8071D1A7FEB00EE0E4D /* Roboto-Regular.ttf in Resources */,
+				AB7ED8001D1A459300EE0E4D /* SmsProgDetail.xib in Resources */,
 				AB23971B1D16878B00BCFF97 /* SmsProgCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -320,6 +364,7 @@
 				AB4905561D13F59D00265A3A /* LoginViewController.m in Sources */,
 				AB3055C01D18D638002B0A77 /* smsProgList.m in Sources */,
 				AB4425431D17010200D8FA86 /* SmsProgViewController.m in Sources */,
+				AB7ED7FE1D1A456F00EE0E4D /* SmsProgDetailViewController.m in Sources */,
 				AB2397161D1642E000BCFF97 /* UserDAO.m in Sources */,
 				AB23971E1D1687B500BCFF97 /* SmsProgCell.m in Sources */,
 				AB8A20BF1D1407A200009EE0 /* MyUtil.m in Sources */,
@@ -435,6 +480,8 @@
 			baseConfigurationReference = 9594A8679593FBAACA01A49F /* Pods-MySMSBrandName.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = MySMSBrandName/PrefixHeader.pch;
 				INFOPLIST_FILE = MySMSBrandName/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -470,6 +517,8 @@
 			baseConfigurationReference = C56D4361F935563D07A3CAE1 /* Pods-MySMSBrandName.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = MySMSBrandName/PrefixHeader.pch;
 				INFOPLIST_FILE = MySMSBrandName/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
