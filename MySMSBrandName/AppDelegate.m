@@ -12,6 +12,8 @@
 #import <RestKit/RestKit.h>
 #import "RestKitDAO.h"
 
+
+
 @interface AppDelegate ()
 
 @end
@@ -28,6 +30,8 @@
     LoginViewController *loginVC = [[LoginViewController alloc] init];
     
     self.window.rootViewController = loginVC;
+    
+
     
     //Configure RestKit
     RestKitDAO *objRestKitDAO = [[RestKitDAO alloc] init];

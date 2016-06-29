@@ -7,10 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AB05A9191D202FAD00EF75BA /* LoadMoreTalbeFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = AB05A9181D202FAD00EF75BA /* LoadMoreTalbeFooterView.m */; };
 		AB2397161D1642E000BCFF97 /* UserDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = AB2397151D1642E000BCFF97 /* UserDAO.m */; };
 		AB2397191D16531F00BCFF97 /* RestKitDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = AB2397181D16531F00BCFF97 /* RestKitDAO.m */; };
 		AB23971B1D16878B00BCFF97 /* SmsProgCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB23971A1D16878B00BCFF97 /* SmsProgCell.xib */; };
 		AB23971E1D1687B500BCFF97 /* SmsProgCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AB23971D1D1687B500BCFF97 /* SmsProgCell.m */; };
+		AB25E71A1D23DCC200EFF432 /* libiOS-Slide-Menu.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AB25E7191D23DCC200EFF432 /* libiOS-Slide-Menu.a */; };
 		AB3055BD1D18D3C8002B0A77 /* smsProg.m in Sources */ = {isa = PBXBuildFile; fileRef = AB3055BC1D18D3C8002B0A77 /* smsProg.m */; };
 		AB3055C01D18D638002B0A77 /* smsProgList.m in Sources */ = {isa = PBXBuildFile; fileRef = AB3055BF1D18D637002B0A77 /* smsProgList.m */; };
 		AB4425431D17010200D8FA86 /* SmsProgViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB4425421D17010200D8FA86 /* SmsProgViewController.m */; };
@@ -49,6 +51,8 @@
 
 /* Begin PBXFileReference section */
 		9594A8679593FBAACA01A49F /* Pods-MySMSBrandName.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MySMSBrandName.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MySMSBrandName/Pods-MySMSBrandName.debug.xcconfig"; sourceTree = "<group>"; };
+		AB05A9171D202FAD00EF75BA /* LoadMoreTalbeFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadMoreTalbeFooterView.h; sourceTree = "<group>"; };
+		AB05A9181D202FAD00EF75BA /* LoadMoreTalbeFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadMoreTalbeFooterView.m; sourceTree = "<group>"; };
 		AB2397141D1642E000BCFF97 /* UserDAO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDAO.h; sourceTree = "<group>"; };
 		AB2397151D1642E000BCFF97 /* UserDAO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDAO.m; sourceTree = "<group>"; };
 		AB2397171D16531F00BCFF97 /* RestKitDAO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestKitDAO.h; sourceTree = "<group>"; };
@@ -56,6 +60,7 @@
 		AB23971A1D16878B00BCFF97 /* SmsProgCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SmsProgCell.xib; sourceTree = "<group>"; };
 		AB23971C1D1687B500BCFF97 /* SmsProgCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SmsProgCell.h; sourceTree = "<group>"; };
 		AB23971D1D1687B500BCFF97 /* SmsProgCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SmsProgCell.m; sourceTree = "<group>"; };
+		AB25E7191D23DCC200EFF432 /* libiOS-Slide-Menu.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libiOS-Slide-Menu.a"; path = "Pods/../build/Debug-iphoneos/libiOS-Slide-Menu.a"; sourceTree = "<group>"; };
 		AB3055BB1D18D3C8002B0A77 /* smsProg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = smsProg.h; sourceTree = "<group>"; };
 		AB3055BC1D18D3C8002B0A77 /* smsProg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = smsProg.m; sourceTree = "<group>"; };
 		AB3055BE1D18D637002B0A77 /* smsProgList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = smsProgList.h; sourceTree = "<group>"; };
@@ -97,6 +102,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB25E71A1D23DCC200EFF432 /* libiOS-Slide-Menu.a in Frameworks */,
 				AB8A20C91D140E3400009EE0 /* CoreData.framework in Frameworks */,
 				AB8A20C71D140E0100009EE0 /* Security.framework in Frameworks */,
 				AB8A20C51D140DF900009EE0 /* CFNetwork.framework in Frameworks */,
@@ -121,6 +127,7 @@
 		5E158298E6369B49D5B41F75 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AB25E7191D23DCC200EFF432 /* libiOS-Slide-Menu.a */,
 				AB8A20C81D140E3400009EE0 /* CoreData.framework */,
 				AB8A20C61D140E0100009EE0 /* Security.framework */,
 				AB8A20C41D140DF900009EE0 /* CFNetwork.framework */,
@@ -241,6 +248,8 @@
 			children = (
 				AB8A20BD1D1407A200009EE0 /* MyUtil.h */,
 				AB8A20BE1D1407A200009EE0 /* MyUtil.m */,
+				AB05A9171D202FAD00EF75BA /* LoadMoreTalbeFooterView.h */,
+				AB05A9181D202FAD00EF75BA /* LoadMoreTalbeFooterView.m */,
 			);
 			name = Util;
 			sourceTree = "<group>";
@@ -366,6 +375,7 @@
 				AB4425431D17010200D8FA86 /* SmsProgViewController.m in Sources */,
 				AB7ED7FE1D1A456F00EE0E4D /* SmsProgDetailViewController.m in Sources */,
 				AB2397161D1642E000BCFF97 /* UserDAO.m in Sources */,
+				AB05A9191D202FAD00EF75BA /* LoadMoreTalbeFooterView.m in Sources */,
 				AB23971E1D1687B500BCFF97 /* SmsProgCell.m in Sources */,
 				AB8A20BF1D1407A200009EE0 /* MyUtil.m in Sources */,
 			);
@@ -484,6 +494,10 @@
 				GCC_PREFIX_HEADER = MySMSBrandName/PrefixHeader.pch;
 				INFOPLIST_FILE = MySMSBrandName/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -521,6 +535,10 @@
 				GCC_PREFIX_HEADER = MySMSBrandName/PrefixHeader.pch;
 				INFOPLIST_FILE = MySMSBrandName/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",

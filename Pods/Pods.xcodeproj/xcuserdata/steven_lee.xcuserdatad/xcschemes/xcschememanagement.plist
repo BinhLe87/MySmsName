@@ -8,60 +8,51 @@
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>0</integer>
 		</dict>
 		<key>ISO8601DateFormatterValueTransformer.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>1</integer>
 		</dict>
 		<key>Pods-MySMSBrandName.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>2</integer>
 		</dict>
 		<key>RKValueTransformers.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>4</integer>
 		</dict>
 		<key>RestKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>3</integer>
 		</dict>
 		<key>SOCKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>5</integer>
 		</dict>
 		<key>TransitionKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>6</integer>
+		</dict>
+		<key>iOS-Slide-Menu.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0218FD6ECA087F9A82850C422D5AF89A</key>
+		<key>01C8647DD33AEB6D8706D1A9DB17FA18</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>0ACE7EFDED225F6D06B956B2A01735FB</key>
+		<key>062C34CBB0B0ABA5F90CA776479604AA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -71,37 +62,27 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>2A01A0836D829356EA9A9AB2B257F361</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>385BEB5E2011C26A49B0D9B6FB22A684</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>47B9B0ACBDE231BECF4B9FAD63440E07</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>59CAA3881BE6B3D2E41BDDB270FB8B4C</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>68E291FC1F64705132E3A6E596659EB8</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>961B88F3FC220642A0BF3864BED1FEBC</key>
+		<key>8FDF490C359EDE3918D5E4981E0C1ED3</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>A2770197345BCE1622568AECE6B8E824</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D7BF289343DF6E2F6C4D10D25D8B5FFA</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D9D2D887C10AC3B5E320001971526B53</key>
 		<dict>
 			<key>primary</key>
 			<true/>

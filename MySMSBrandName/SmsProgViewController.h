@@ -8,15 +8,21 @@
 
 #import <UIKit/UIKit.h>
 #import "smsProgList.h"
+#import "LoadMoreTalbeFooterView.h"
 
+@interface SmsProgViewController : UITableViewController <LoadMoreTableFooterDelegate> {
+    
+    LoadMoreTalbeFooterView *footerView;
+    int loadedPageIdx;
+}
 
-@interface SmsProgViewController : UITableViewController
-
-@property (nonatomic, readwrite) smsProgList *smsProgs;
+@property (nonatomic, readwrite) NSMutableArray *smsProgs;
 @property (nonatomic) NSString *token;
 
 
 
+
 - (void) loadSmsProgs:(int)pageID pageSize:(int)pageSize;
+
 
 @end

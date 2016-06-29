@@ -4,6 +4,7 @@
 def sharedpods
 pod 'RestKit', '~> 0.24.0'
 pod 'RKValueTransformers'
+pod 'iOS-Slide-Menu'
 end
 
 target 'MySMSBrandName' do
