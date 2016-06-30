@@ -11,6 +11,8 @@
 #import "MyUtil.h"
 #import <RestKit/RestKit.h>
 #import "RestKitDAO.h"
+#import <SlideNavigationController.h>
+#import "LeftMenuViewController.h"
 
 
 
@@ -27,11 +29,26 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
        
     
+    
+    
+    
     LoginViewController *loginVC = [[LoginViewController alloc] init];
     
-    self.window.rootViewController = loginVC;
-    
+    SlideNavigationController *_slideNavigationController = [[SlideNavigationController alloc] initWithRootViewController:loginVC];
+    LeftMenuViewController *leftMenu = [[LeftMenuViewController alloc] initWithNibName:@"LeftMenuViewController" bundle:nil];
+    [SlideNavigationController sharedInstance].leftMenu = leftMenu;
+    [SlideNavigationController sharedInstance].menuRevealAnimationDuration = .18;
+    //Slide menu
+    UIButton *button  = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
+    [button setImage:[UIImage imageNamed:@"menu-button"] forState:UIControlStateNormal];
+    [button addTarget:[SlideNavigationController sharedInstance] action:@selector(toggleLeftMenu) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
+    [SlideNavigationController sharedInstance].leftBarButtonItem = leftBarButtonItem;
 
+    
+    self.window.rootViewController = _slideNavigationController;
+    
+   
     
     //Configure RestKit
     RestKitDAO *objRestKitDAO = [[RestKitDAO alloc] init];

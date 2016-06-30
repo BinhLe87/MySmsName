@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "smsProgList.h"
 #import "LoadMoreTalbeFooterView.h"
+#import <SlideNavigationController.h>
 
-@interface SmsProgViewController : UITableViewController <LoadMoreTableFooterDelegate> {
+@interface SmsProgViewController : UITableViewController <LoadMoreTableFooterDelegate, SlideNavigationControllerDelegate> {
     
     LoadMoreTalbeFooterView *footerView;
     int loadedPageIdx;

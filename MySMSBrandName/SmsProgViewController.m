@@ -25,6 +25,8 @@
     loadedPageIdx = 1;
     _smsProgs = [[NSMutableArray alloc] init];
     
+
+    
    //Load the NIB file
     UINib *smsProgCellNib = [UINib nibWithNibName:@"SmsProgCell" bundle:nil];
     
@@ -187,6 +189,12 @@
         [self reloadData];
     });
 }
+
+-(BOOL)slideNavigationControllerShouldDisplayLeftMenu {
+    
+    return YES;
+}
+
 
 
 /*

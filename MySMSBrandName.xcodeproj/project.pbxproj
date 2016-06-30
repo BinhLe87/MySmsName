@@ -34,6 +34,12 @@
 		AB8A20C51D140DF900009EE0 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB8A20C41D140DF900009EE0 /* CFNetwork.framework */; };
 		AB8A20C71D140E0100009EE0 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB8A20C61D140E0100009EE0 /* Security.framework */; };
 		AB8A20C91D140E3400009EE0 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB8A20C81D140E3400009EE0 /* CoreData.framework */; };
+		ABDE12DD1D2431AC00C1D80D /* LeftMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABDE12DC1D2431AC00C1D80D /* LeftMenuViewController.m */; };
+		ABDE12F11D24348B00C1D80D /* animation.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDE12ED1D24348B00C1D80D /* animation.png */; };
+		ABDE12F21D24348B00C1D80D /* gear.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDE12EE1D24348B00C1D80D /* gear.png */; };
+		ABDE12F31D24348B00C1D80D /* leftMenu.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ABDE12EF1D24348B00C1D80D /* leftMenu.jpg */; };
+		ABDE12F41D24348B00C1D80D /* rightMenu.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ABDE12F01D24348B00C1D80D /* rightMenu.jpg */; };
+		ABDE12FC1D24374800C1D80D /* LeftMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABDE12FB1D24374800C1D80D /* LeftMenuViewController.xib */; };
 		AE904D4A62B4860B9FFB71E8 /* libPods-MySMSBrandName.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D9FA24C8782EA46649B88DC2 /* libPods-MySMSBrandName.a */; };
 /* End PBXBuildFile section */
 
@@ -60,7 +66,7 @@
 		AB23971A1D16878B00BCFF97 /* SmsProgCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SmsProgCell.xib; sourceTree = "<group>"; };
 		AB23971C1D1687B500BCFF97 /* SmsProgCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SmsProgCell.h; sourceTree = "<group>"; };
 		AB23971D1D1687B500BCFF97 /* SmsProgCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SmsProgCell.m; sourceTree = "<group>"; };
-		AB25E7191D23DCC200EFF432 /* libiOS-Slide-Menu.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libiOS-Slide-Menu.a"; path = "Pods/../build/Debug-iphoneos/libiOS-Slide-Menu.a"; sourceTree = "<group>"; };
+		AB25E7191D23DCC200EFF432 /* libiOS-Slide-Menu.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libiOS-Slide-Menu.a"; path = "build/Debug-iphoneos/libiOS-Slide-Menu.a"; sourceTree = "<group>"; };
 		AB3055BB1D18D3C8002B0A77 /* smsProg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = smsProg.h; sourceTree = "<group>"; };
 		AB3055BC1D18D3C8002B0A77 /* smsProg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = smsProg.m; sourceTree = "<group>"; };
 		AB3055BE1D18D637002B0A77 /* smsProgList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = smsProgList.h; sourceTree = "<group>"; };
@@ -93,6 +99,13 @@
 		AB8A20C41D140DF900009EE0 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		AB8A20C61D140E0100009EE0 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		AB8A20C81D140E3400009EE0 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		ABDE12DB1D2431AB00C1D80D /* LeftMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftMenuViewController.h; sourceTree = "<group>"; };
+		ABDE12DC1D2431AC00C1D80D /* LeftMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftMenuViewController.m; sourceTree = "<group>"; };
+		ABDE12ED1D24348B00C1D80D /* animation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = animation.png; sourceTree = "<group>"; };
+		ABDE12EE1D24348B00C1D80D /* gear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gear.png; sourceTree = "<group>"; };
+		ABDE12EF1D24348B00C1D80D /* leftMenu.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = leftMenu.jpg; sourceTree = "<group>"; };
+		ABDE12F01D24348B00C1D80D /* rightMenu.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = rightMenu.jpg; sourceTree = "<group>"; };
+		ABDE12FB1D24374800C1D80D /* LeftMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LeftMenuViewController.xib; sourceTree = "<group>"; };
 		C56D4361F935563D07A3CAE1 /* Pods-MySMSBrandName.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MySMSBrandName.release.xcconfig"; path = "Pods/Target Support Files/Pods-MySMSBrandName/Pods-MySMSBrandName.release.xcconfig"; sourceTree = "<group>"; };
 		D9FA24C8782EA46649B88DC2 /* libPods-MySMSBrandName.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MySMSBrandName.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -147,6 +160,7 @@
 				5E158298E6369B49D5B41F75 /* Frameworks */,
 			);
 			sourceTree = "<group>";
+			usesTabs = 0;
 		};
 		AB49052D1D13F06600265A3A /* Products */ = {
 			isa = PBXGroup;
@@ -159,6 +173,7 @@
 		AB49052E1D13F06600265A3A /* MySMSBrandName */ = {
 			isa = PBXGroup;
 			children = (
+				ABDE12EC1D24348B00C1D80D /* Images */,
 				AB7ED8011D1A7FEB00EE0E4D /* Font */,
 				AB8A20BC1D14078400009EE0 /* Util */,
 				AB49054B1D13F1B700265A3A /* Controller */,
@@ -216,6 +231,7 @@
 				AB23971C1D1687B500BCFF97 /* SmsProgCell.h */,
 				AB23971D1D1687B500BCFF97 /* SmsProgCell.m */,
 				AB7ED7FF1D1A459300EE0E4D /* SmsProgDetail.xib */,
+				ABDE12FB1D24374800C1D80D /* LeftMenuViewController.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -250,8 +266,21 @@
 				AB8A20BE1D1407A200009EE0 /* MyUtil.m */,
 				AB05A9171D202FAD00EF75BA /* LoadMoreTalbeFooterView.h */,
 				AB05A9181D202FAD00EF75BA /* LoadMoreTalbeFooterView.m */,
+				ABDE12DB1D2431AB00C1D80D /* LeftMenuViewController.h */,
+				ABDE12DC1D2431AC00C1D80D /* LeftMenuViewController.m */,
 			);
 			name = Util;
+			sourceTree = "<group>";
+		};
+		ABDE12EC1D24348B00C1D80D /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				ABDE12ED1D24348B00C1D80D /* animation.png */,
+				ABDE12EE1D24348B00C1D80D /* gear.png */,
+				ABDE12EF1D24348B00C1D80D /* leftMenu.jpg */,
+				ABDE12F01D24348B00C1D80D /* rightMenu.jpg */,
+			);
+			path = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -314,14 +343,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABDE12F41D24348B00C1D80D /* rightMenu.jpg in Resources */,
 				AB7ED8061D1A7FEB00EE0E4D /* Roboto-Medium.ttf in Resources */,
 				AB49053F1D13F06600265A3A /* LaunchScreen.storyboard in Resources */,
 				AB49054D1D13F1E100265A3A /* LoginView.xib in Resources */,
+				ABDE12F31D24348B00C1D80D /* leftMenu.jpg in Resources */,
 				AB49053C1D13F06600265A3A /* Assets.xcassets in Resources */,
+				ABDE12F21D24348B00C1D80D /* gear.png in Resources */,
 				AB49053A1D13F06600265A3A /* Main.storyboard in Resources */,
 				AB7ED8051D1A7FEB00EE0E4D /* Roboto-Light.ttf in Resources */,
 				AB7ED8071D1A7FEB00EE0E4D /* Roboto-Regular.ttf in Resources */,
 				AB7ED8001D1A459300EE0E4D /* SmsProgDetail.xib in Resources */,
+				ABDE12F11D24348B00C1D80D /* animation.png in Resources */,
+				ABDE12FC1D24374800C1D80D /* LeftMenuViewController.xib in Resources */,
 				AB23971B1D16878B00BCFF97 /* SmsProgCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -372,6 +406,7 @@
 				AB4905311D13F06600265A3A /* main.m in Sources */,
 				AB4905561D13F59D00265A3A /* LoginViewController.m in Sources */,
 				AB3055C01D18D638002B0A77 /* smsProgList.m in Sources */,
+				ABDE12DD1D2431AC00C1D80D /* LeftMenuViewController.m in Sources */,
 				AB4425431D17010200D8FA86 /* SmsProgViewController.m in Sources */,
 				AB7ED7FE1D1A456F00EE0E4D /* SmsProgDetailViewController.m in Sources */,
 				AB2397161D1642E000BCFF97 /* UserDAO.m in Sources */,
@@ -440,6 +475,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"\"$(inherited)\"",
+					"\"${PODROOTS}/Headers/\"/**",
+				);
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -478,6 +517,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"\"$(inherited)\"",
+					"\"${PODROOTS}/Headers/\"/**",
+				);
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
@@ -492,12 +535,31 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = MySMSBrandName/PrefixHeader.pch;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/AFNetworking\"",
+					"\"${PODS_ROOT}/Headers/Public/ISO8601DateFormatterValueTransformer\"",
+					"\"${PODS_ROOT}/Headers/Public/RKValueTransformers\"",
+					"\"${PODS_ROOT}/Headers/Public/RestKit\"",
+					"\"${PODS_ROOT}/Headers/Public/RestKit/CoreData\"",
+					"\"${PODS_ROOT}/Headers/Public/RestKit/Network\"",
+					"\"${PODS_ROOT}/Headers/Public/RestKit/ObjectMapping\"",
+					"\"${PODS_ROOT}/Headers/Public/RestKit/Support\"",
+					"\"${PODS_ROOT}/Headers/Public/SOCKit\"",
+					"\"${PODS_ROOT}/Headers/Public/TransitionKit\"",
+					"\"${PODS_ROOT}/Headers/Public/Vendor/LibComponentLogging/Core\"",
+					"\"${PODS_ROOT}/Headers/Public/iOS-Slide-Menu\"",
+					"\"${PODS_ROOT}/Headers/\"",
+					"/**",
+				);
 				INFOPLIST_FILE = MySMSBrandName/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
 				);
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -533,12 +595,31 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = MySMSBrandName/PrefixHeader.pch;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/AFNetworking\"",
+					"\"${PODS_ROOT}/Headers/Public/ISO8601DateFormatterValueTransformer\"",
+					"\"${PODS_ROOT}/Headers/Public/RKValueTransformers\"",
+					"\"${PODS_ROOT}/Headers/Public/RestKit\"",
+					"\"${PODS_ROOT}/Headers/Public/RestKit/CoreData\"",
+					"\"${PODS_ROOT}/Headers/Public/RestKit/Network\"",
+					"\"${PODS_ROOT}/Headers/Public/RestKit/ObjectMapping\"",
+					"\"${PODS_ROOT}/Headers/Public/RestKit/Support\"",
+					"\"${PODS_ROOT}/Headers/Public/SOCKit\"",
+					"\"${PODS_ROOT}/Headers/Public/TransitionKit\"",
+					"\"${PODS_ROOT}/Headers/Public/Vendor/LibComponentLogging/Core\"",
+					"\"${PODS_ROOT}/Headers/Public/iOS-Slide-Menu\"",
+					"\"${PODS_ROOT}/Headers/\"",
+					"/**",
+				);
 				INFOPLIST_FILE = MySMSBrandName/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
 				);
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
