@@ -27,14 +27,14 @@
     // Override point for customization after application launch.
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-       
-    
-    
     
     
     LoginViewController *loginVC = [[LoginViewController alloc] init];
     
     SlideNavigationController *_slideNavigationController = [[SlideNavigationController alloc] initWithRootViewController:loginVC];
+    
+    
+    
     LeftMenuViewController *leftMenu = [[LeftMenuViewController alloc] initWithNibName:@"LeftMenuViewController" bundle:nil];
     [SlideNavigationController sharedInstance].leftMenu = leftMenu;
     [SlideNavigationController sharedInstance].menuRevealAnimationDuration = .18;
