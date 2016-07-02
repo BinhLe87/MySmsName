@@ -109,6 +109,9 @@
 
 -(void)loadMoreScrollViewDidScroll:(UIScrollView *)scrollView {
     
+    if (scrollView.contentSize.height == 0)
+        return;
+    
     if (scrollView.contentOffset.y > scrollView.contentSize.height - scrollView.bounds.size.height) {
         
         [self setState:PullLoadMorePulling];

@@ -12,6 +12,7 @@
 #import "smsProg.h"
 #import "SmsProgCell.h"
 
+
 @interface SmsProgViewController ()
 
 @property (nonatomic) void (^fetchCompletedBlock)(RKObjectRequestOperation *operation, RKMappingResult *mappingResult);
@@ -19,20 +20,24 @@
 
 @implementation SmsProgViewController
 
+
+-(void)viewWillAppear:(BOOL)animated {
+    
+    [super viewWillAppear:animated];
+    
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     loadedPageIdx = 1;
     _smsProgs = [[NSMutableArray alloc] init];
     
-
     
    //Load the NIB file
     UINib *smsProgCellNib = [UINib nibWithNibName:@"SmsProgCell" bundle:nil];
     
     [self.tableView registerNib:smsProgCellNib forCellReuseIdentifier:@"SmsProgCell"];
-    
-    
     
     if (footerView == nil)
     {
@@ -43,12 +48,24 @@
     }
 
     
-   [self loadSmsProgs:loadedPageIdx pageSize:10];
-   [self reloadData];
+
+    
+    //in the meantime, display loading indicator
+    activityIndicatorView = [[DGActivityIndicatorView alloc] initWithType:DGActivityIndicatorAnimationTypeBallSpinFadeLoader tintColor:[UIColor whiteColor]];
+    CGFloat width = self.view.bounds.size.width / 4.0f;
+    CGFloat height = self.view.bounds.size.height / 6.0f;
+    
+    activityIndicatorView.frame = CGRectMake((self.view.frame.size.width - width)/2.0, (self.view.frame.size.height-height)/2.0, width, height);
+    [self.view addSubview:activityIndicatorView];
+    [activityIndicatorView startAnimating];
+    
+  [self loadSmsProgs:loadedPageIdx pageSize:10];
+
 }
 
 - (void)reloadData
 {
+    [activityIndicatorView stopAnimating];
     [self.tableView reloadData];
     
     footerView.frame = CGRectMake(0.0f, self.tableView.contentSize.height, self.view.frame.size.width, self.tableView.bounds.size.height);
@@ -105,25 +122,34 @@
 //        
 //    }];
     
-    NSDictionary *params = @{@"token":  _token, @"page_id": [NSNumber numberWithInt:pageID], @"page_size": [NSNumber numberWithInt:pageSize]};
-    RKObjectRequestOperation *operation = [[RKObjectManager sharedManager] appropriateObjectRequestOperationWithObject:nil method:RKRequestMethodPOST path:API_GET_MESSAGE_PROGRESS parameters:params];
-    [operation setCompletionBlockWithSuccess:nil failure:nil];
-   // [[RKObjectManager sharedManager] enqueueObjectRequestOperation:operation];
-    smsProgList *objSmsProgList = [[smsProgList alloc] init];
-
-    
-    [operation start];
-    [operation waitUntilFinished];
-    
-    if (!operation.error) {
+    dispatch_sync(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+        NSDictionary *params = @{@"token":  _token, @"page_id": [NSNumber numberWithInt:pageID], @"page_size": [NSNumber numberWithInt:pageSize]};
+        RKObjectRequestOperation *operation = [[RKObjectManager sharedManager] appropriateObjectRequestOperationWithObject:nil method:RKRequestMethodPOST path:API_GET_MESSAGE_PROGRESS parameters:params];
+        [operation setCompletionBlockWithSuccess:nil failure:nil];
+        // [[RKObjectManager sharedManager] enqueueObjectRequestOperation:operation];
+        smsProgList *objSmsProgList = [[smsProgList alloc] init];
         
-        objSmsProgList = (smsProgList *) [operation.mappingResult firstObject];
-    }
+        
+        [operation start];
+        [operation waitUntilFinished];
+        
+        if (!operation.error) {
+            
+            objSmsProgList = (smsProgList *) [operation.mappingResult firstObject];
+        }
+        
+        for (smsProg* aSmsProg in objSmsProgList.smsProgArr) {
+            [_smsProgs addObject:aSmsProg];
+        }
+        
+          [NSThread sleepForTimeInterval:5];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self reloadData];
+        });
+    });
     
-    for (smsProg* aSmsProg in objSmsProgList.smsProgArr) {
-        [_smsProgs addObject:aSmsProg];
-    }
-}
+  }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
@@ -182,12 +208,10 @@
 
 -(void)loadMoreTableFooterDidTriggerLoadMore:(LoadMoreTalbeFooterView *)view {
     
-    dispatch_async(dispatch_get_main_queue(), ^{
-    
         loadedPageIdx = loadedPageIdx + 1;
         [self loadSmsProgs:loadedPageIdx pageSize:10];
-        [self reloadData];
-    });
+    
+
 }
 
 -(BOOL)slideNavigationControllerShouldDisplayLeftMenu {
