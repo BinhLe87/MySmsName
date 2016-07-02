@@ -42,6 +42,7 @@
 		ABDE12FC1D24374800C1D80D /* LeftMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABDE12FB1D24374800C1D80D /* LeftMenuViewController.xib */; };
 		ABFACDB71D27972500CF3C09 /* DGActivityIndicatorBallSpinFadeLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = ABFACDB51D27972500CF3C09 /* DGActivityIndicatorBallSpinFadeLoader.m */; };
 		ABFACDBA1D2799B600CF3C09 /* DGActivityIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = ABFACDB91D2799B600CF3C09 /* DGActivityIndicatorView.m */; };
+		ABFACDC11D27BB5500CF3C09 /* LoadingIndicatorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABFACDC01D27BB5500CF3C09 /* LoadingIndicatorViewController.m */; };
 		AE904D4A62B4860B9FFB71E8 /* libPods-MySMSBrandName.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D9FA24C8782EA46649B88DC2 /* libPods-MySMSBrandName.a */; };
 /* End PBXBuildFile section */
 
@@ -113,6 +114,8 @@
 		ABFACDB61D27972500CF3C09 /* DGActivityIndicatorAnimationProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGActivityIndicatorAnimationProtocol.h; sourceTree = "<group>"; };
 		ABFACDB81D2799B600CF3C09 /* DGActivityIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGActivityIndicatorView.h; sourceTree = "<group>"; };
 		ABFACDB91D2799B600CF3C09 /* DGActivityIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGActivityIndicatorView.m; sourceTree = "<group>"; };
+		ABFACDBF1D27BB5500CF3C09 /* LoadingIndicatorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadingIndicatorViewController.h; sourceTree = "<group>"; };
+		ABFACDC01D27BB5500CF3C09 /* LoadingIndicatorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadingIndicatorViewController.m; sourceTree = "<group>"; };
 		C56D4361F935563D07A3CAE1 /* Pods-MySMSBrandName.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MySMSBrandName.release.xcconfig"; path = "Pods/Target Support Files/Pods-MySMSBrandName/Pods-MySMSBrandName.release.xcconfig"; sourceTree = "<group>"; };
 		D9FA24C8782EA46649B88DC2 /* libPods-MySMSBrandName.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MySMSBrandName.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -253,6 +256,8 @@
 				AB4425421D17010200D8FA86 /* SmsProgViewController.m */,
 				AB7ED7FC1D1A456F00EE0E4D /* SmsProgDetailViewController.h */,
 				AB7ED7FD1D1A456F00EE0E4D /* SmsProgDetailViewController.m */,
+				ABFACDBF1D27BB5500CF3C09 /* LoadingIndicatorViewController.h */,
+				ABFACDC01D27BB5500CF3C09 /* LoadingIndicatorViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -438,6 +443,7 @@
 				ABFACDBA1D2799B600CF3C09 /* DGActivityIndicatorView.m in Sources */,
 				AB4425431D17010200D8FA86 /* SmsProgViewController.m in Sources */,
 				AB7ED7FE1D1A456F00EE0E4D /* SmsProgDetailViewController.m in Sources */,
+				ABFACDC11D27BB5500CF3C09 /* LoadingIndicatorViewController.m in Sources */,
 				ABFACDB71D27972500CF3C09 /* DGActivityIndicatorBallSpinFadeLoader.m in Sources */,
 				AB2397161D1642E000BCFF97 /* UserDAO.m in Sources */,
 				AB05A9191D202FAD00EF75BA /* LoadMoreTalbeFooterView.m in Sources */,

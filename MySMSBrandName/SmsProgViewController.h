@@ -10,22 +10,30 @@
 #import "smsProgList.h"
 #import "LoadMoreTalbeFooterView.h"
 #import <SlideNavigationController.h>
-#import "DGActivityIndicatorView.h"
+
+@protocol SmsProgViewDelegate;
+
 
 @interface SmsProgViewController : UITableViewController <LoadMoreTableFooterDelegate, SlideNavigationControllerDelegate> {
     
     LoadMoreTalbeFooterView *footerView;
     int loadedPageIdx;
-    DGActivityIndicatorView *activityIndicatorView;
+
 }
 
 @property (nonatomic, readwrite) NSMutableArray *smsProgs;
 @property (nonatomic) NSString *token;
-
-
+@property (nonatomic) id <SmsProgViewDelegate> delegate;
 
 
 - (void) loadSmsProgs:(int)pageID pageSize:(int)pageSize;
 
+
+@end
+
+
+@protocol SmsProgViewDelegate
+
+-(void) didPrepareData;
 
 @end

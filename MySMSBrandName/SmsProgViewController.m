@@ -47,25 +47,14 @@
         [self.tableView addSubview:footerView];
     }
 
-    
 
-    
-    //in the meantime, display loading indicator
-    activityIndicatorView = [[DGActivityIndicatorView alloc] initWithType:DGActivityIndicatorAnimationTypeBallSpinFadeLoader tintColor:[UIColor whiteColor]];
-    CGFloat width = self.view.bounds.size.width / 4.0f;
-    CGFloat height = self.view.bounds.size.height / 6.0f;
-    
-    activityIndicatorView.frame = CGRectMake((self.view.frame.size.width - width)/2.0, (self.view.frame.size.height-height)/2.0, width, height);
-    [self.view addSubview:activityIndicatorView];
-    [activityIndicatorView startAnimating];
-    
   [self loadSmsProgs:loadedPageIdx pageSize:10];
 
 }
 
 - (void)reloadData
 {
-    [activityIndicatorView stopAnimating];
+
     [self.tableView reloadData];
     
     footerView.frame = CGRectMake(0.0f, self.tableView.contentSize.height, self.view.frame.size.width, self.tableView.bounds.size.height);
@@ -122,14 +111,14 @@
 //        
 //    }];
     
-    dispatch_sync(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+  
         NSDictionary *params = @{@"token":  _token, @"page_id": [NSNumber numberWithInt:pageID], @"page_size": [NSNumber numberWithInt:pageSize]};
         RKObjectRequestOperation *operation = [[RKObjectManager sharedManager] appropriateObjectRequestOperationWithObject:nil method:RKRequestMethodPOST path:API_GET_MESSAGE_PROGRESS parameters:params];
         [operation setCompletionBlockWithSuccess:nil failure:nil];
         // [[RKObjectManager sharedManager] enqueueObjectRequestOperation:operation];
         smsProgList *objSmsProgList = [[smsProgList alloc] init];
         
-        
+    [NSThread sleepForTimeInterval:10];
         [operation start];
         [operation waitUntilFinished];
         
@@ -142,12 +131,9 @@
             [_smsProgs addObject:aSmsProg];
         }
         
-          [NSThread sleepForTimeInterval:5];
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
+ 
             [self reloadData];
-        });
-    });
+   
     
   }
 
