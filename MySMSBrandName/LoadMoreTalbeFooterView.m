@@ -77,7 +77,7 @@
                 [CATransaction commit];
             }
             
-            _statusLabel.text = @"PullLoadMoreNormal";
+         //   _statusLabel.text = @"PullLoadMoreNormal";
             [_activityView stopAnimating];
             [CATransaction begin];
             [CATransaction setValue:(id)kCFBooleanTrue forKey:kCATransactionDisableActions];

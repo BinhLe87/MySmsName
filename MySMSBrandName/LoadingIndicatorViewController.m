@@ -67,7 +67,7 @@
         [self.navigationController popToRootViewControllerAnimated:TRUE];
     } else {
         
-        smsProgVC.token = token;
+        smsProgVC.token = token;        
         [self.navigationController pushViewController:smsProgVC animated:TRUE];
     }
 }

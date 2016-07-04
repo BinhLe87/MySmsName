@@ -14,9 +14,20 @@
 
 @implementation SmsProgDetailViewController
 
+- (void)viewWillAppear:(BOOL)animated {
+    
+    [super viewWillAppear:animated];
+    
+    self.progIDTxt.text = _smsProgEntity.prog_id;
+    self.progCodeTxt.text = _smsProgEntity.prog_code;
+    self.contentTxt.text = _smsProgEntity.content;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {

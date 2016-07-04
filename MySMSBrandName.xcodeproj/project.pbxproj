@@ -34,6 +34,7 @@
 		AB8A20C51D140DF900009EE0 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB8A20C41D140DF900009EE0 /* CFNetwork.framework */; };
 		AB8A20C71D140E0100009EE0 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB8A20C61D140E0100009EE0 /* Security.framework */; };
 		AB8A20C91D140E3400009EE0 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB8A20C81D140E3400009EE0 /* CoreData.framework */; };
+		ABAF56441D2A0E710065BDBA /* SmsProgDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABAF56431D2A0E710065BDBA /* SmsProgDetailViewController.xib */; };
 		ABDE12DD1D2431AC00C1D80D /* LeftMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABDE12DC1D2431AC00C1D80D /* LeftMenuViewController.m */; };
 		ABDE12F11D24348B00C1D80D /* animation.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDE12ED1D24348B00C1D80D /* animation.png */; };
 		ABDE12F21D24348B00C1D80D /* gear.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDE12EE1D24348B00C1D80D /* gear.png */; };
@@ -102,6 +103,7 @@
 		AB8A20C41D140DF900009EE0 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		AB8A20C61D140E0100009EE0 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		AB8A20C81D140E3400009EE0 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		ABAF56431D2A0E710065BDBA /* SmsProgDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SmsProgDetailViewController.xib; sourceTree = "<group>"; };
 		ABDE12DB1D2431AB00C1D80D /* LeftMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftMenuViewController.h; sourceTree = "<group>"; };
 		ABDE12DC1D2431AC00C1D80D /* LeftMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftMenuViewController.m; sourceTree = "<group>"; };
 		ABDE12ED1D24348B00C1D80D /* animation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = animation.png; sourceTree = "<group>"; };
@@ -243,6 +245,7 @@
 				AB23971D1D1687B500BCFF97 /* SmsProgCell.m */,
 				AB7ED7FF1D1A459300EE0E4D /* SmsProgDetail.xib */,
 				ABDE12FB1D24374800C1D80D /* LeftMenuViewController.xib */,
+				ABAF56431D2A0E710065BDBA /* SmsProgDetailViewController.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -384,6 +387,7 @@
 				AB49053C1D13F06600265A3A /* Assets.xcassets in Resources */,
 				ABDE12F21D24348B00C1D80D /* gear.png in Resources */,
 				AB49053A1D13F06600265A3A /* Main.storyboard in Resources */,
+				ABAF56441D2A0E710065BDBA /* SmsProgDetailViewController.xib in Resources */,
 				AB7ED8051D1A7FEB00EE0E4D /* Roboto-Light.ttf in Resources */,
 				AB7ED8071D1A7FEB00EE0E4D /* Roboto-Regular.ttf in Resources */,
 				AB7ED8001D1A459300EE0E4D /* SmsProgDetail.xib in Resources */,
