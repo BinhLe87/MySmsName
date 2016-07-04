@@ -90,15 +90,39 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    SmsProgCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SmsProgCell" forIndexPath:indexPath];
+   SmsProgCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SmsProgCell" forIndexPath:indexPath];
+   
+    if (cell == nil) {
+        
+        cell = [[SmsProgCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"SmsProgCell"];
+        
+        cell.accessoryType = UITableViewCellAccessoryNone;
+    }
     
-    smsProg *objSmsProg = (smsProg *)[_smsProgs objectAtIndex:[indexPath row]];
+    smsProg *objSmsProg = [self.smsProgs objectAtIndex:indexPath.section];
+
     
     // Configure the cell...
+    cell.progIDLbl.text = [NSString stringWithFormat:@"Prog Id: %@", objSmsProg.prog_id];
     cell.progCodeLbl.text = objSmsProg.prog_code;
     cell.progStatLbl.text = [NSString stringWithFormat:@"Trạng thái: %@", objSmsProg.status];
     cell.progAliasLbl.text = objSmsProg.alias;
     cell.progCreatedDateLbl.text = objSmsProg.created_date;
+    
+    if([objSmsProg.totalSub intValue] > 1) {
+        
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    } else {
+        
+        cell.accessoryType = UITableViewCellAccessoryNone;
+    }
+    
+      // This is how you change the background color
+    cell.selectionStyle = UITableViewCellSelectionStyleDefault;
+    UIView *bgColorView = [[UIView alloc] init];
+    bgColorView.backgroundColor = [UIColor grayColor];
+    [cell setSelectedBackgroundView:bgColorView];
+    
     
     
     return cell;
@@ -218,7 +242,9 @@
     
     SmsProgDetailViewController *objSmsProgDetailVC = [[SmsProgDetailViewController alloc] initWithNibName:@"SmsProgDetailViewController" bundle:nil];
     
-    objSmsProgDetailVC.smsProgEntity = (smsProg *)[self.smsProgs objectAtIndex:[indexPath row]];
+    objSmsProgDetailVC.smsProgEntity = (smsProg *)[self.smsProgs objectAtIndex:indexPath.section];
+    
+    
     
     [self.navigationController pushViewController:objSmsProgDetailVC animated:YES];
 }
