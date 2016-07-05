@@ -25,8 +25,6 @@
 
 
 
-
-
 -(instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -73,6 +71,11 @@
     loadedPageIdx = 1;
     _smsProgs = [[NSMutableArray alloc] init];
     
+    
+    //Load the NIB file
+    UINib *smsProgCellNib = [UINib nibWithNibName:@"SmsProgCell" bundle:nil];
+    
+    [self.tableView registerNib:smsProgCellNib forCellReuseIdentifier:@"SmsProgCell"];
     
     if (footerView == nil)
     {
@@ -165,13 +168,11 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    SmsProgCell *cell = nil; // [tableView dequeueReusableCellWithIdentifier:[SmsProgCell reuseIdentifier] forIndexPath:indexPath];
+    SmsProgCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SmsProgCell" forIndexPath:indexPath];
     
     if (cell == nil) {
         
-         [[NSBundle mainBundle] loadNibNamed:@"SmsProgCell" owner:self options:nil];
-        cell = _mySmsProgCell;
-        _mySmsProgCell = nil;
+        cell = [[SmsProgCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"SmsProgCell"];
         
         cell.accessoryType = UITableViewCellAccessoryNone;
     }

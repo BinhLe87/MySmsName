@@ -7,14 +7,36 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SmsProgViewController">
             <connections>
-                <outlet property="view" destination="zyy-7g-xy2" id="hel-YK-NvH"/>
+                <outlet property="tableView" destination="OMN-hF-LNO" id="kmt-9o-IXI"/>
+                <outlet property="view" destination="SLO-Fq-iG6" id="wBk-LT-4Cc"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="zyy-7g-xy2">
-            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+        <view contentMode="scaleToFill" id="SLO-Fq-iG6">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="OMN-hF-LNO">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="458" id="Hm4-fY-mVe"/>
+                    </constraints>
+                    <color key="sectionIndexBackgroundColor" red="0.67843137249999996" green="1" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="lya-Qc-gi1"/>
+                        <outlet property="delegate" destination="-1" id="mNj-rn-Brw"/>
+                    </connections>
+                </tableView>
+            </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-        </tableView>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="OMN-hF-LNO" secondAttribute="trailing" id="1pZ-vq-J5M"/>
+                <constraint firstItem="OMN-hF-LNO" firstAttribute="leading" secondItem="SLO-Fq-iG6" secondAttribute="leading" id="UXp-Yk-AbE"/>
+                <constraint firstItem="OMN-hF-LNO" firstAttribute="top" secondItem="SLO-Fq-iG6" secondAttribute="top" id="Z7t-3J-wSB"/>
+                <constraint firstAttribute="bottom" secondItem="OMN-hF-LNO" secondAttribute="bottom" id="cEk-H8-JRe"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+        </view>
     </objects>
 </document>
