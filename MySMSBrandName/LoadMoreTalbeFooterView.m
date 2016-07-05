@@ -36,7 +36,7 @@
         layer.contentsGravity = kCAGravityResizeAspect;
         layer.contents = (id)[UIImage imageNamed:arrow].CGImage;
         
-        [[self layer] addSublayer:layer];
+        //[[self layer] addSublayer:layer];
         _arrowImage = layer;
         
         

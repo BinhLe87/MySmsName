@@ -8,41 +8,57 @@
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>0</integer>
 		</dict>
 		<key>ISO8601DateFormatterValueTransformer.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>2</integer>
 		</dict>
 		<key>Pods-MySMSBrandName.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>3</integer>
 		</dict>
 		<key>RKValueTransformers.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>5</integer>
 		</dict>
 		<key>RestKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>4</integer>
 		</dict>
 		<key>SOCKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>6</integer>
 		</dict>
 		<key>TransitionKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>7</integer>
 		</dict>
 		<key>iOS-Slide-Menu.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>1</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
@@ -62,7 +78,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>2A01A0836D829356EA9A9AB2B257F361</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>2BF0D40AA8062EBEAC71C0EF20D10EEA</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>385BEB5E2011C26A49B0D9B6FB22A684</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>59CAA3881BE6B3D2E41BDDB270FB8B4C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -78,6 +109,11 @@
 			<true/>
 		</dict>
 		<key>8FDF490C359EDE3918D5E4981E0C1ED3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>961B88F3FC220642A0BF3864BED1FEBC</key>
 		<dict>
 			<key>primary</key>
 			<true/>

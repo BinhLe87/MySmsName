@@ -14,7 +14,9 @@
 #import "SmsProgDetailViewController.h"
 
 
+
 @interface SmsProgViewController ()
+
 
 @property (nonatomic) void (^fetchCompletedBlock)(RKObjectRequestOperation *operation, RKMappingResult *mappingResult);
 @end
@@ -22,9 +24,35 @@
 @implementation SmsProgViewController
 
 
+
+-(instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+    
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    
+    if (self) {
+        
+        UINavigationItem *navItem = self.navigationItem;
+        navItem.title = @"D.sách chương trình";
+        navItem.rightBarButtonItem = self.editButtonItem;
+        
+        //        UIBarButtonItem *bbi = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"add-navitem"] style:UIBarButtonItemStylePlain target:self action:@selector(addSmsProg)];
+        //        bbi.tintColor = [UIColor redColor];
+        
+        
+        [self.navigationController.navigationBar setTitleTextAttributes:
+         @{NSForegroundColorAttributeName:[UIColor redColor],
+           NSFontAttributeName:[UIFont fontWithName:@"Helvetica Neue" size:13]}];
+    }
+    
+    return self;
+}
+
+
 -(void)viewWillAppear:(BOOL)animated {
     
     [super viewWillAppear:animated];
+    
+  //  [self.navigationController setNavigationBarHidden:YES animated:animated];
     
 }
 
@@ -59,6 +87,47 @@
     
     [self loadSmsProgs:loadedPageIdx pageSize:10];
     
+
+}
+
+
+
+- (void)addSmsProg{
+    
+    NSLog(@"Da nhan addSmsProg");
+}
+
+-(BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    return YES;
+}
+
+-(UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    return UITableViewCellEditingStyleDelete;
+}
+
+-(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        
+        [self.smsProgs removeObjectAtIndex:indexPath.section];
+
+        NSIndexSet *indexPathSet = [NSIndexSet indexSetWithIndex:indexPath.section];
+        
+        [self.tableView deleteSections:indexPathSet withRowAnimation:UITableViewRowAnimationAutomatic];
+        
+        
+    }
+}
+
+-(void)setEditing:(BOOL)editing {
+    
+    if (editing) {
+        [self.tableView setEditing:YES animated:YES];
+    } else {
+        [self.tableView setEditing:NO animated:YES];
+    }
 }
 
 - (void)reloadData
@@ -84,14 +153,23 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 #warning Incomplete implementation, return the number of rows
+    
     return 1;
 }
 
+- (void) setHiddenStatus:(SmsProgCell *) cell hiddenStat:(BOOL)hiddenStat {
+    
+    cell.progIDLbl.hidden = hiddenStat;
+    cell.progCodeLbl.hidden = hiddenStat;
+    cell.progStatLbl.hidden = hiddenStat;
+    cell.progAliasLbl.hidden = hiddenStat;
+    cell.progCreatedDateLbl.hidden = hiddenStat;
+}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-   SmsProgCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SmsProgCell" forIndexPath:indexPath];
-   
+    SmsProgCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SmsProgCell" forIndexPath:indexPath];
+    
     if (cell == nil) {
         
         cell = [[SmsProgCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"SmsProgCell"];
@@ -99,8 +177,9 @@
         cell.accessoryType = UITableViewCellAccessoryNone;
     }
     
+    
     smsProg *objSmsProg = [self.smsProgs objectAtIndex:indexPath.section];
-
+    
     
     // Configure the cell...
     cell.progIDLbl.text = [NSString stringWithFormat:@"Prog Id: %@", objSmsProg.prog_id];
@@ -109,6 +188,7 @@
     cell.progAliasLbl.text = objSmsProg.alias;
     cell.progCreatedDateLbl.text = objSmsProg.created_date;
     
+    //only show AccessoryIndicator for rows have totolSub's value is greater than 1
     if([objSmsProg.totalSub intValue] > 1) {
         
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
@@ -116,13 +196,6 @@
         
         cell.accessoryType = UITableViewCellAccessoryNone;
     }
-    
-      // This is how you change the background color
-    cell.selectionStyle = UITableViewCellSelectionStyleDefault;
-    UIView *bgColorView = [[UIView alloc] init];
-    bgColorView.backgroundColor = [UIColor grayColor];
-    [cell setSelectedBackgroundView:bgColorView];
-    
     
     
     return cell;
@@ -208,6 +281,8 @@
     sectionHeader.text = date;
     
     UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, [self tableView:tableView heightForHeaderInSection:section])];
+    
+    
     [headerView addSubview:sectionHeader];
     headerView.backgroundColor = UIColorFromRGB(BACKGROUND_COLOR);
     sectionHeader.center = CGPointMake((tableView.frame.size.width) / 2 + 10, headerView.frame.size.height / 2);
@@ -224,11 +299,11 @@
 
 -(void)loadMoreTableFooterDidTriggerLoadMore:(LoadMoreTalbeFooterView *)view {
     
-   loadedPageIdx = loadedPageIdx + 1;
-   [self loadSmsProgs:loadedPageIdx pageSize:10];
+    loadedPageIdx = loadedPageIdx + 1;
+    [self loadSmsProgs:loadedPageIdx pageSize:10];
     
     [self reloadData];
-
+    
     
     
 }
@@ -239,6 +314,7 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
     
     SmsProgDetailViewController *objSmsProgDetailVC = [[SmsProgDetailViewController alloc] initWithNibName:@"SmsProgDetailViewController" bundle:nil];
     

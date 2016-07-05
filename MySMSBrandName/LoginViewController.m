@@ -54,6 +54,11 @@
     [super viewWillDisappear:animated];
 }
 
+-(void)viewDidAppear:(BOOL)animated {
+    
+    [self loginBtnPressed:nil];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -102,10 +107,7 @@
                 
                 [_statusLabel setText:[NSString stringWithFormat:@"Token is %@", _account.token]];
                 NSLog(@"Token is %@", _account.token);
-                
-                //Present SmsProgViewController
-                SmsProgViewController *smsProgViewController = [[SmsProgViewController alloc] init];
-                smsProgViewController.token = _account.token;
+        
                 
             } else {
                 

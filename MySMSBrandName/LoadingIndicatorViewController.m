@@ -21,7 +21,7 @@
     
     if (self) {
         
-        smsProgVC = [[SmsProgViewController alloc] init];
+        smsProgVC = [[SmsProgViewController alloc] initWithNibName:@"HomeScreen" bundle:nil];
     }
     
     return self;

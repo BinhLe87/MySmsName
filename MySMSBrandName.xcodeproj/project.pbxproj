@@ -28,6 +28,7 @@
 		AB7ED8051D1A7FEB00EE0E4D /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AB7ED8021D1A7FEB00EE0E4D /* Roboto-Light.ttf */; };
 		AB7ED8061D1A7FEB00EE0E4D /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AB7ED8031D1A7FEB00EE0E4D /* Roboto-Medium.ttf */; };
 		AB7ED8071D1A7FEB00EE0E4D /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AB7ED8041D1A7FEB00EE0E4D /* Roboto-Regular.ttf */; };
+		AB864ED31D2BA8980045764A /* HomeScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB864ED21D2BA8980045764A /* HomeScreen.xib */; };
 		AB8A20BF1D1407A200009EE0 /* MyUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = AB8A20BE1D1407A200009EE0 /* MyUtil.m */; };
 		AB8A20C11D140D9200009EE0 /* libRestKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AB8A20C01D140D9200009EE0 /* libRestKit.a */; };
 		AB8A20C31D140DF000009EE0 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB8A20C21D140DF000009EE0 /* MobileCoreServices.framework */; };
@@ -96,6 +97,7 @@
 		AB7ED8031D1A7FEB00EE0E4D /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
 		AB7ED8041D1A7FEB00EE0E4D /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		AB7ED8081D1A8F9100EE0E4D /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		AB864ED21D2BA8980045764A /* HomeScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeScreen.xib; sourceTree = "<group>"; };
 		AB8A20BD1D1407A200009EE0 /* MyUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyUtil.h; sourceTree = "<group>"; };
 		AB8A20BE1D1407A200009EE0 /* MyUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyUtil.m; sourceTree = "<group>"; };
 		AB8A20C01D140D9200009EE0 /* libRestKit.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libRestKit.a; path = "../../../../../Library/Developer/Xcode/DerivedData/MySMSBrandName-aofiyhfriphnzgdptowojxblgowt/Build/Products/Debug-iphonesimulator/libRestKit.a"; sourceTree = "<group>"; };
@@ -246,6 +248,7 @@
 				AB7ED7FF1D1A459300EE0E4D /* SmsProgDetail.xib */,
 				ABDE12FB1D24374800C1D80D /* LeftMenuViewController.xib */,
 				ABAF56431D2A0E710065BDBA /* SmsProgDetailViewController.xib */,
+				AB864ED21D2BA8980045764A /* HomeScreen.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -387,6 +390,7 @@
 				AB49053C1D13F06600265A3A /* Assets.xcassets in Resources */,
 				ABDE12F21D24348B00C1D80D /* gear.png in Resources */,
 				AB49053A1D13F06600265A3A /* Main.storyboard in Resources */,
+				AB864ED31D2BA8980045764A /* HomeScreen.xib in Resources */,
 				ABAF56441D2A0E710065BDBA /* SmsProgDetailViewController.xib in Resources */,
 				AB7ED8051D1A7FEB00EE0E4D /* Roboto-Light.ttf in Resources */,
 				AB7ED8071D1A7FEB00EE0E4D /* Roboto-Regular.ttf in Resources */,
