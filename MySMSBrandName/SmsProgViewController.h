@@ -15,16 +15,17 @@
 @protocol SmsProgViewDelegate;
 
 
-@interface SmsProgViewController : UIViewController <LoadMoreTableFooterDelegate, SlideNavigationControllerDelegate> {
+@interface SmsProgViewController : UITableViewController <LoadMoreTableFooterDelegate, SlideNavigationControllerDelegate> {
     
     LoadMoreTalbeFooterView *footerView;
     int loadedPageIdx;
 }
 
-@property (nonatomic, strong) IBOutlet UITableView *tableView;
+//@property (nonatomic, strong) IBOutlet UITableView *tableView;
 @property (nonatomic, readwrite) NSMutableArray *smsProgs;
 @property (nonatomic) NSString *token;
 @property (nonatomic) id <SmsProgViewDelegate> delegate;
+@property (nonatomic,assign) IBOutlet SmsProgCell *mySmsProgCell;
 
 
 @property (weak, nonatomic) IBOutlet UILabel *addNewRowLbl;
@@ -33,6 +34,8 @@
 - (void) loadSmsProgs:(int)pageID pageSize:(int)pageSize;
 - (void)addSmsProg;
 - (void) setHiddenStatus:(SmsProgCell *) cell hiddenStat:(BOOL)hiddenStat;
+
+
 
 @end
 

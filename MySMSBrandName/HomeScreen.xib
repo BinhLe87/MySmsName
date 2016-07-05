@@ -7,77 +7,14 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SmsProgViewController">
             <connections>
-                <outlet property="addNewRowLbl" destination="aDt-g6-nO0" id="smr-rB-6dH"/>
-                <outlet property="tableView" destination="OMN-hF-LNO" id="SM9-Mn-Bwq"/>
-                <outlet property="view" destination="bdY-x4-7p7" id="VMi-7Q-KhC"/>
+                <outlet property="view" destination="zyy-7g-xy2" id="hel-YK-NvH"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="bdY-x4-7p7">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="zyy-7g-xy2">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ah6-3N-wpm">
-                    <rect key="frame" x="0.0" y="50" width="320" height="508"/>
-                    <subviews>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bQS-Jr-vQe">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
-                            <subviews>
-                                <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="i6o-j5-cPz">
-                                    <rect key="frame" x="104" y="0.0" width="116" height="50"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Add new row" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aDt-g6-nO0">
-                                            <rect key="frame" x="0.0" y="0.0" width="89" height="50"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="50" id="e3i-ad-ypw"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="add-navitem" translatesAutoresizingMaskIntoConstraints="NO" id="jlc-ZR-SAB">
-                                            <rect key="frame" x="94" y="14" width="22" height="22"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="22" id="ZEj-y2-Y3a"/>
-                                                <constraint firstAttribute="height" priority="900" constant="22" id="lhh-JL-jlA"/>
-                                            </constraints>
-                                        </imageView>
-                                    </subviews>
-                                </stackView>
-                            </subviews>
-                            <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
-                        </view>
-                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="OMN-hF-LNO">
-                            <rect key="frame" x="0.0" y="50" width="320" height="458"/>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="458" id="Hm4-fY-mVe"/>
-                            </constraints>
-                            <color key="sectionIndexBackgroundColor" red="0.67843137249999996" green="1" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
-                            <connections>
-                                <outlet property="dataSource" destination="-1" id="lya-Qc-gi1"/>
-                                <outlet property="delegate" destination="-1" id="mNj-rn-Brw"/>
-                            </connections>
-                        </tableView>
-                    </subviews>
-                    <constraints>
-                        <constraint firstItem="OMN-hF-LNO" firstAttribute="leading" secondItem="ah6-3N-wpm" secondAttribute="leading" id="ZcA-zC-bcC"/>
-                        <constraint firstAttribute="trailing" secondItem="OMN-hF-LNO" secondAttribute="trailing" id="lyc-DY-pKh"/>
-                        <constraint firstAttribute="bottom" secondItem="OMN-hF-LNO" secondAttribute="bottom" id="vHp-UD-TZc"/>
-                    </constraints>
-                </stackView>
-            </subviews>
-            <constraints>
-                <constraint firstItem="ah6-3N-wpm" firstAttribute="leading" secondItem="bdY-x4-7p7" secondAttribute="leading" id="BKl-fj-Kif"/>
-                <constraint firstAttribute="bottom" secondItem="ah6-3N-wpm" secondAttribute="bottom" id="ggA-8k-vST"/>
-                <constraint firstItem="ah6-3N-wpm" firstAttribute="top" secondItem="bdY-x4-7p7" secondAttribute="top" constant="60" id="irw-X6-fwH"/>
-                <constraint firstAttribute="trailing" secondItem="ah6-3N-wpm" secondAttribute="trailing" id="rIh-ih-h0l"/>
-            </constraints>
-            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-            <point key="canvasLocation" x="311" y="356"/>
-        </view>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+        </tableView>
     </objects>
-    <resources>
-        <image name="add-navitem" width="60" height="60"/>
-    </resources>
 </document>

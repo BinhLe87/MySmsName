@@ -12,6 +12,7 @@
 
 @interface SmsProgCell : UITableViewCell
 
++ (NSString *)reuseIdentifier;
 @property (weak, nonatomic) IBOutlet UILabel *progIDLbl;
 
 
