@@ -35,10 +35,6 @@
         navItem.title = @"D.sách chương trình";
         navItem.rightBarButtonItem = self.editButtonItem;
         
-        //        UIBarButtonItem *bbi = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"add-navitem"] style:UIBarButtonItemStylePlain target:self action:@selector(addSmsProg)];
-        //        bbi.tintColor = [UIColor redColor];
-        
-        
         [self.navigationController.navigationBar setTitleTextAttributes:
          @{NSForegroundColorAttributeName:[UIColor redColor],
            NSFontAttributeName:[UIFont fontWithName:@"Helvetica Neue" size:13]}];
@@ -48,11 +44,12 @@
 }
 
 
+
 -(void)viewWillAppear:(BOOL)animated {
     
     [super viewWillAppear:animated];
     
-  //  [self.navigationController setNavigationBarHidden:YES animated:animated];
+    //  [self.navigationController setNavigationBarHidden:YES animated:animated];
     
 }
 
@@ -87,7 +84,7 @@
     
     [self loadSmsProgs:loadedPageIdx pageSize:10];
     
-
+    
 }
 
 
@@ -112,7 +109,7 @@
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         
         [self.smsProgs removeObjectAtIndex:indexPath.section];
-
+        
         NSIndexSet *indexPathSet = [NSIndexSet indexSetWithIndex:indexPath.section];
         
         [self.tableView deleteSections:indexPathSet withRowAnimation:UITableViewRowAnimationAutomatic];
@@ -123,11 +120,33 @@
 
 -(void)setEditing:(BOOL)editing {
     
-    if (editing) {
-        [self.tableView setEditing:YES animated:YES];
+    [self setEditing:editing animated:YES];
+    
+}
+
+- (void) setEditing:(BOOL)editing animated:(BOOL)animated {
+    
+    [self.tableView setEditing:editing animated:animated];
+    
+    
+    if(editing) {
+        
+        [self.editButtonItem initWithTitle:@"Done" style:UIBarButtonItemStyleDone target:self action:@selector(changeEditModeStats)];
     } else {
-        [self.tableView setEditing:NO animated:YES];
+        [self.editButtonItem initWithTitle:@"Edit" style:UIBarButtonItemStyleDone target:self action:@selector(changeEditModeStats)];
     }
+}
+
+- (void) changeEditModeStats{
+    
+    if ([self.tableView isEditing]) {
+        
+        [self setEditing:NO animated:YES];
+    } else {
+        
+        [self setEditing:YES animated:YES];
+    }
+    
 }
 
 - (void)reloadData

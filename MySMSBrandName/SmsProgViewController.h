@@ -33,6 +33,7 @@
 - (void) loadSmsProgs:(int)pageID pageSize:(int)pageSize;
 - (void)addSmsProg;
 - (void) setHiddenStatus:(SmsProgCell *) cell hiddenStat:(BOOL)hiddenStat;
+- (void) changeEditModeStats;
 
 @end
 
