@@ -15,7 +15,7 @@
 @protocol SmsProgViewDelegate;
 
 
-@interface SmsProgViewController : UIViewController <LoadMoreTableFooterDelegate, SlideNavigationControllerDelegate> {
+@interface SmsProgViewController : UIViewController <LoadMoreTableFooterDelegate, SlideNavigationControllerDelegate, SmsProgCellDelegate> {
     
     LoadMoreTalbeFooterView *footerView;
     int loadedPageIdx;
@@ -37,9 +37,9 @@
 
 
 @property (strong, nonatomic) IBOutlet UITapGestureRecognizer *myTabGestureRecognizer;
+@property (nonatomic, strong) NSIndexPath *swipedCellIndexPath;
 
 - (IBAction)addNewRowTap:(id)sender;
-- (IBAction)handleHoldGesture:(UILongPressGestureRecognizer *)sender;
 -(void)didSwipeLeftInCellWithIndexPath:(NSIndexPath *)indexPath;
 @end
 

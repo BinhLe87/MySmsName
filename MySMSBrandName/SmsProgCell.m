@@ -16,6 +16,8 @@
 @implementation SmsProgCell
 
 
+@synthesize delegate = _delegate;
+
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
@@ -25,7 +27,7 @@
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
+    
     // Configure the view for the selected state
 }
 
@@ -38,8 +40,9 @@
 
 -(void)setupSwipeGesture{
     
+    
     // Create the top view
-    _swipeView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.contentView.frame.size.width, 80)];
+    _swipeView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.contentView.frame.size.width, self.contentView.frame.size.height)];
     [_swipeView setBackgroundColor:[UIColor darkGrayColor]];
     
     // Create the swipe label
@@ -52,30 +55,78 @@
     
     // Add views to contentView
     [self.contentView addSubview:_swipeView];
+    [self.contentView addSubview:_topView];
     
-    UISwipeGestureRecognizer *swipeLeft = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(didSwipeLeftInCell:)];
-    [swipeLeft setDirection:UISwipeGestureRecognizerDirectionLeft];
-    [self addGestureRecognizer:swipeLeft];
+    if (lgGesture == nil) {
+        lgGesture = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(didSwipeLeftInCell:)];
+        lgGesture.minimumPressDuration = 1;
+    }
+    
+    
+    [self addGestureRecognizer:lgGesture];
     
     // Prevent selection highlighting
     [self setSelectionStyle:UITableViewCellSelectionStyleNone];
-
+    
+    self.contentView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+    self.swipeView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    self.topView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(willEnableGesture)
+                                                 name:@"EnableGestureOnCell"
+                                               object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(willDisableGesture)
+                                                 name:@"DisableGestureOnCell"
+                                               object:nil];
 }
 
 -(void)didSwipeLeftInCell:(id)sender {
     
+    if ([_delegate respondsToSelector:@selector(didSwipeLeftInCellWithIndexPath:)]) {
+        
+        [_delegate didSwipeLeftInCellWithIndexPath:_indexPath];
+    }
+    
+    
     [UIView setAnimationCurve:UIViewAnimationCurveEaseIn];
     [UIView animateWithDuration:1.0 animations:^{
         
-        [self.contentView setFrame:CGRectMake(-10, 0, 320, 80)];
+        [self.topView setFrame:CGRectMake(self.frame.size.width, 0, self.frame.size.width, self.frame.size.height)];
         
     } completion:^(BOOL finished) {
-        [UIView animateWithDuration:0.15 animations:^{
-            [self.contentView setFrame:CGRectMake(0, 0, 320, 80)];
-        }];
+        
+           [UIView animateWithDuration:0.15 animations:^{
+            [self.swipeView setFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
+        } ];
     }];
+}
+
+- (void)didResetSwipeLeftInCell {
     
+    [UIView setAnimationCurve:UIViewAnimationCurveEaseIn];
+    [UIView animateWithDuration:0.1 animations:^{
+        
+        [self.swipeView setFrame:CGRectMake(-self.contentView.frame.size.width, 0, self.contentView.frame.size.width, self.contentView.frame.size.height)];
+        
+    } completion:^(BOOL finished) {
+        
+        [UIView animateWithDuration:0.15 animations:^{
+            [self.topView setFrame:CGRectMake(0, 0, self.contentView.frame.size.width, self.contentView.frame.size.height)];
+        } ];
+    }];
+}
+
+-(void)willEnableGesture {
     
+    lgGesture.enabled = YES;
+}
+
+-(void)willDisableGesture {
+    
+    lgGesture.enabled = NO;
 }
 
 @end

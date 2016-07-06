@@ -119,18 +119,22 @@
 
 -(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     
-      NSIndexSet *indexPathSet = [NSIndexSet indexSetWithIndex:indexPath.section];
+    NSIndexSet *indexPathSet;
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         
+        indexPathSet  = [NSIndexSet indexSetWithIndex:indexPath.section];
         [self.smsProgs removeObjectAtIndex:indexPath.section];
         [self.tableView deleteSections:indexPathSet withRowAnimation:UITableViewRowAnimationAutomatic];
     } else if(editingStyle == UITableViewCellEditingStyleInsert) {
         
+          indexPathSet  = [NSIndexSet indexSetWithIndex:0];
         smsProg *objSmsProgNew = [[smsProg alloc] initDefault4New];
         
         [self.smsProgs insertObject:objSmsProgNew atIndex:0];
         [self.tableView insertSections:indexPathSet withRowAnimation:UITableViewRowAnimationAutomatic];
     }
+    
+    [self reloadData];
 }
 
 -(void)setEditing:(BOOL)editing {
@@ -150,8 +154,11 @@
     if(editing) {
         
         [self.editButtonItem initWithTitle:@"Done" style:UIBarButtonItemStyleDone target:self action:@selector(changeEditModeStats)];
+        
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"DisableGestureOnCell" object:self];
     } else {
         [self.editButtonItem initWithTitle:@"Edit" style:UIBarButtonItemStyleDone target:self action:@selector(changeEditModeStats)];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"EnableGestureOnCell" object:self];
     }
 }
 
@@ -209,6 +216,7 @@
     
     cell.accessoryType = UITableViewCellAccessoryNone;
     cell.delegate = self;
+    cell.indexPath = indexPath;
 
     
     smsProg *objSmsProg = [self.smsProgs objectAtIndex:indexPath.section];
@@ -230,26 +238,21 @@
         cell.accessoryType = UITableViewCellAccessoryNone;
     }
     
-    UILongPressGestureRecognizer *lpHandler = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(handleHoldGesture:)];
-    lpHandler.minimumPressDuration = 10; //seconds
-    lpHandler.delegate = self;
-    
-    
-    // Add the gestureRecognizer to the cell
-    [cell addGestureRecognizer:lpHandler];
-    
-    
     return cell;
 }
 
--(IBAction)handleHoldGesture:(UILongPressGestureRecognizer *)sender {
-    
-    NSLog(@"Double tap on cell");
-}
 
--(void)didSwipeLeftInCellWithIndexPath:(NSIndexPath *)indexPath {
+- (void)didSwipeLeftInCellWithIndexPath:(NSIndexPath *)indexPath {
     
+    // Check if the newly-swiped cell is different to the currently swiped cell – if it is, ‘unswipe’ it
+    if (_swipedCellIndexPath.section != indexPath.section) {
     
+        // Unswipe the currently swiped cell
+        SmsProgCell *currentSwipedCell = (SmsProgCell*) [self.tableView cellForRowAtIndexPath:_swipedCellIndexPath];
+        [currentSwipedCell didResetSwipeLeftInCell];
+    }
+    
+    _swipedCellIndexPath = indexPath;
 }
 
 
@@ -345,6 +348,13 @@
 }
 
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    
+    if(_swipedCellIndexPath) {
+        
+        // Unswipe the currently swiped cell
+        SmsProgCell *currentSwipedCell = (SmsProgCell*) [self.tableView cellForRowAtIndexPath:_swipedCellIndexPath];
+        [currentSwipedCell didResetSwipeLeftInCell];
+    }
     
     [footerView loadMoreScrollViewDidScroll:scrollView];
 }
