@@ -22,4 +22,6 @@
 @property(nonatomic) NSNumber *totalSuccess;
 @property(nonatomic) NSNumber *totalFail;
 
+-(instancetype)initDefault4New;
+
 @end

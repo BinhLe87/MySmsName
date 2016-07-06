@@ -7,7 +7,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SmsProgViewController">
             <connections>
-                <outlet property="addNewRowLbl" destination="aDt-g6-nO0" id="smr-rB-6dH"/>
+                <outlet property="addNewRowView" destination="bQS-Jr-vQe" id="8Hb-sg-OOD"/>
+                <outlet property="myTabGestureRecognizer" destination="GJJ-LH-Jra" id="Aik-Ht-eUs"/>
                 <outlet property="tableView" destination="OMN-hF-LNO" id="SM9-Mn-Bwq"/>
                 <outlet property="view" destination="bdY-x4-7p7" id="VMi-7Q-KhC"/>
             </connections>
@@ -45,7 +46,10 @@
                                     </subviews>
                                 </stackView>
                             </subviews>
-                            <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="backgroundColor" red="0.40000000600000002" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <outletCollection property="gestureRecognizers" destination="GJJ-LH-Jra" appends="YES" id="JOg-Wn-W3l"/>
+                            </connections>
                         </view>
                         <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="OMN-hF-LNO">
                             <rect key="frame" x="0.0" y="50" width="320" height="458"/>
@@ -76,6 +80,11 @@
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
             <point key="canvasLocation" x="311" y="356"/>
         </view>
+        <tapGestureRecognizer id="GJJ-LH-Jra">
+            <connections>
+                <action selector="addNewRowTap:" destination="-1" id="v2w-U0-dOP"/>
+            </connections>
+        </tapGestureRecognizer>
     </objects>
     <resources>
         <image name="add-navitem" width="60" height="60"/>

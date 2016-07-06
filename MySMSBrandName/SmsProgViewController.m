@@ -38,11 +38,18 @@
         [self.navigationController.navigationBar setTitleTextAttributes:
          @{NSForegroundColorAttributeName:[UIColor redColor],
            NSFontAttributeName:[UIFont fontWithName:@"Helvetica Neue" size:13]}];
+        
     }
     
     return self;
 }
 
+- (IBAction)addNewRowTap:(id)sender {
+    
+    NSIndexPath *idxPath = [NSIndexPath indexPathForRow:0 inSection:0];
+
+    [self tableView:_tableView commitEditingStyle:UITableViewCellEditingStyleInsert forRowAtIndexPath:idxPath];
+}
 
 
 -(void)viewWillAppear:(BOOL)animated {
@@ -106,19 +113,23 @@
 
 -(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     
+      NSIndexSet *indexPathSet = [NSIndexSet indexSetWithIndex:indexPath.section];
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         
         [self.smsProgs removeObjectAtIndex:indexPath.section];
-        
-        NSIndexSet *indexPathSet = [NSIndexSet indexSetWithIndex:indexPath.section];
-        
         [self.tableView deleteSections:indexPathSet withRowAnimation:UITableViewRowAnimationAutomatic];
+    } else if(editingStyle == UITableViewCellEditingStyleInsert) {
         
+        smsProg *objSmsProgNew = [[smsProg alloc] initDefault4New];
         
+        [self.smsProgs insertObject:objSmsProgNew atIndex:0];
+        [self.tableView insertSections:indexPathSet withRowAnimation:UITableViewRowAnimationAutomatic];
     }
 }
 
 -(void)setEditing:(BOOL)editing {
+    
+    [super setEditing:editing];
     
     [self setEditing:editing animated:YES];
     
@@ -126,6 +137,7 @@
 
 - (void) setEditing:(BOOL)editing animated:(BOOL)animated {
     
+    [super setEditing:editing animated:animated];
     [self.tableView setEditing:editing animated:animated];
     
     

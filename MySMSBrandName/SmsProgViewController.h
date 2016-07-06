@@ -22,18 +22,24 @@
 }
 
 @property (nonatomic, strong) IBOutlet UITableView *tableView;
+
+@property (weak, nonatomic) IBOutlet UIView *addNewRowView;
+
 @property (nonatomic, readwrite) NSMutableArray *smsProgs;
 @property (nonatomic) NSString *token;
 @property (nonatomic) id <SmsProgViewDelegate> delegate;
 
 
-@property (weak, nonatomic) IBOutlet UILabel *addNewRowLbl;
-
-
 - (void) loadSmsProgs:(int)pageID pageSize:(int)pageSize;
-- (void)addSmsProg;
+- (void) addSmsProg;
 - (void) setHiddenStatus:(SmsProgCell *) cell hiddenStat:(BOOL)hiddenStat;
 - (void) changeEditModeStats;
+
+
+@property (strong, nonatomic) IBOutlet UITapGestureRecognizer *myTabGestureRecognizer;
+
+- (IBAction)addNewRowTap:(id)sender;
+
 
 @end
 
