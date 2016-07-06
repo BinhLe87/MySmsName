@@ -108,7 +108,13 @@
 
 -(UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    return UITableViewCellEditingStyleDelete;
+    // Detemine if it's in editing mode
+    if (self.tableView.editing)
+    {
+        return UITableViewCellEditingStyleDelete;
+    }
+    
+    return UITableViewCellEditingStyleNone;
 }
 
 -(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -201,13 +207,9 @@
     
     SmsProgCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SmsProgCell" forIndexPath:indexPath];
     
-    if (cell == nil) {
-        
-        cell = [[SmsProgCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"SmsProgCell"];
-        
-        cell.accessoryType = UITableViewCellAccessoryNone;
-    }
-    
+    cell.accessoryType = UITableViewCellAccessoryNone;
+    cell.delegate = self;
+
     
     smsProg *objSmsProg = [self.smsProgs objectAtIndex:indexPath.section];
     
@@ -228,9 +230,28 @@
         cell.accessoryType = UITableViewCellAccessoryNone;
     }
     
+    UILongPressGestureRecognizer *lpHandler = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(handleHoldGesture:)];
+    lpHandler.minimumPressDuration = 10; //seconds
+    lpHandler.delegate = self;
+    
+    
+    // Add the gestureRecognizer to the cell
+    [cell addGestureRecognizer:lpHandler];
+    
     
     return cell;
 }
+
+-(IBAction)handleHoldGesture:(UILongPressGestureRecognizer *)sender {
+    
+    NSLog(@"Double tap on cell");
+}
+
+-(void)didSwipeLeftInCellWithIndexPath:(NSIndexPath *)indexPath {
+    
+    
+}
+
 
 - (void)loadSmsProgs:(int)pageID pageSize:(int)pageSize {
     

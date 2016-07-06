@@ -39,8 +39,8 @@
 @property (strong, nonatomic) IBOutlet UITapGestureRecognizer *myTabGestureRecognizer;
 
 - (IBAction)addNewRowTap:(id)sender;
-
-
+- (IBAction)handleHoldGesture:(UILongPressGestureRecognizer *)sender;
+-(void)didSwipeLeftInCellWithIndexPath:(NSIndexPath *)indexPath;
 @end
 
 

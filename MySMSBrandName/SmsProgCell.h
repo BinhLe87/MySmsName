@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-
+@protocol SmsProgCellDelegate;
 
 @interface SmsProgCell : UITableViewCell
+
+@property (nonatomic) id <SmsProgCellDelegate> delegate;
 
 @property (weak, nonatomic) IBOutlet UILabel *progIDLbl;
 
@@ -21,5 +23,17 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *progAliasLbl;
 @property (weak, nonatomic) IBOutlet UILabel *progCreatedDateLbl;
+
+@property (nonatomic, strong) UIView *swipeView;
+
+
+-(IBAction)didSwipeLeftInCell:(id)sender;
+-(void) setupSwipeGesture;
+
+@end
+
+@protocol SmsProgCellDelegate
+
+-(void)didSwipeLeftInCellWithIndexPath:(NSIndexPath *)indexPath;
 
 @end
