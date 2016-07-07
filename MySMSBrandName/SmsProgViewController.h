@@ -15,10 +15,12 @@
 @protocol SmsProgViewDelegate;
 
 
+
 @interface SmsProgViewController : UIViewController <LoadMoreTableFooterDelegate, SlideNavigationControllerDelegate, SmsProgCellDelegate> {
     
     LoadMoreTalbeFooterView *footerView;
     int loadedPageIdx;
+    CGPoint originTableInSuperview;
 }
 
 @property (nonatomic, strong) IBOutlet UITableView *tableView;
@@ -28,6 +30,12 @@
 @property (nonatomic, readwrite) NSMutableArray *smsProgs;
 @property (nonatomic) NSString *token;
 @property (nonatomic) id <SmsProgViewDelegate> delegate;
+
+@property (nonatomic, strong) UIWindow *mainWindow;
+@property (nonatomic, strong) UIActivityIndicatorView *activityIndicator;
+@property (nonatomic, strong) UIView *activityView;
+-(void)displayActivitySpinner;
+-(void)removeActivitySpinner;
 
 
 - (void) loadSmsProgs:(int)pageID pageSize:(int)pageSize;

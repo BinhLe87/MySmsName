@@ -37,19 +37,18 @@
 }
 
 
-
 -(void)setupSwipeGesture{
     
     
     // Create the top view
     _swipeView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.contentView.frame.size.width, self.contentView.frame.size.height)];
-    [_swipeView setBackgroundColor:[UIColor darkGrayColor]];
+    [_swipeView setBackgroundColor:[UIColor grayColor]];
     
     // Create the swipe label
     UILabel *haveSwipedlabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 25, 200, 30)];
     [haveSwipedlabel setFont:[UIFont fontWithName:@"GillSans-Bold" size:18]];
     [haveSwipedlabel setTextColor:[UIColor whiteColor]];
-    [haveSwipedlabel setBackgroundColor:[UIColor darkGrayColor]];
+    [haveSwipedlabel setBackgroundColor:[UIColor grayColor]];
     [haveSwipedlabel setText:@"I've been swiped!"];
     [_swipeView addSubview:haveSwipedlabel];
     

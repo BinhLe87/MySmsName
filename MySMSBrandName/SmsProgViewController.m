@@ -14,7 +14,6 @@
 #import "SmsProgDetailViewController.h"
 
 
-
 @interface SmsProgViewController ()
 
 
@@ -38,7 +37,6 @@
         [self.navigationController.navigationBar setTitleTextAttributes:
          @{NSForegroundColorAttributeName:[UIColor redColor],
            NSFontAttributeName:[UIFont fontWithName:@"Helvetica Neue" size:13]}];
-        
     }
     
     return self;
@@ -47,7 +45,7 @@
 - (IBAction)addNewRowTap:(id)sender {
     
     NSIndexPath *idxPath = [NSIndexPath indexPathForRow:0 inSection:0];
-
+    
     [self tableView:_tableView commitEditingStyle:UITableViewCellEditingStyleInsert forRowAtIndexPath:idxPath];
 }
 
@@ -56,7 +54,7 @@
     
     [super viewWillAppear:animated];
     
-    //  [self.navigationController setNavigationBarHidden:YES animated:animated];
+    //[self.navigationController setNavigationBarHidden:YES animated:animated];
     
 }
 
@@ -64,9 +62,16 @@
     
     [super viewDidAppear:animated];
     
+    _mainWindow = [[UIApplication sharedApplication] keyWindow];
+    [_mainWindow setBackgroundColor:[UIColor whiteColor]];
+    
+    
     NSIndexPath *selectedIndexPath = [self.tableView indexPathForSelectedRow];
     
     [self.tableView deselectRowAtIndexPath:selectedIndexPath animated:animated];
+    
+    originTableInSuperview = [self.mainWindow convertPoint:CGPointMake(0, 0) fromView:self.tableView];
+
 }
 
 - (void)viewDidLoad {
@@ -90,7 +95,6 @@
     }
     
     [self loadSmsProgs:loadedPageIdx pageSize:10];
-    
     
 }
 
@@ -127,7 +131,7 @@
         [self.tableView deleteSections:indexPathSet withRowAnimation:UITableViewRowAnimationAutomatic];
     } else if(editingStyle == UITableViewCellEditingStyleInsert) {
         
-          indexPathSet  = [NSIndexSet indexSetWithIndex:0];
+        indexPathSet  = [NSIndexSet indexSetWithIndex:0];
         smsProg *objSmsProgNew = [[smsProg alloc] initDefault4New];
         
         [self.smsProgs insertObject:objSmsProgNew atIndex:0];
@@ -217,7 +221,7 @@
     cell.accessoryType = UITableViewCellAccessoryNone;
     cell.delegate = self;
     cell.indexPath = indexPath;
-
+    
     
     smsProg *objSmsProg = [self.smsProgs objectAtIndex:indexPath.section];
     
@@ -246,7 +250,7 @@
     
     // Check if the newly-swiped cell is different to the currently swiped cell – if it is, ‘unswipe’ it
     if (_swipedCellIndexPath.section != indexPath.section) {
-    
+        
         // Unswipe the currently swiped cell
         SmsProgCell *currentSwipedCell = (SmsProgCell*) [self.tableView cellForRowAtIndexPath:_swipedCellIndexPath];
         [currentSwipedCell didResetSwipeLeftInCell];
@@ -386,6 +390,47 @@
     
     [self.navigationController pushViewController:objSmsProgDetailVC animated:YES];
 }
+
+-(void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
+    
+    CGFloat contentOffsetY = scrollView.contentOffset.y;
+    
+    if (contentOffsetY < -60.0) {
+        
+        [self displayActivitySpinner]; }
+    
+}
+
+-(void)displayActivitySpinner {
+    
+    _activityView = [[UIView alloc] initWithFrame:CGRectMake(0, originTableInSuperview.y, 320, 60)];
+    [_activityView setBackgroundColor:[UIColor whiteColor]];
+    
+    _activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    
+    
+    [_activityIndicator setFrame:CGRectMake(145, 20, 30, 30)];
+    [_activityIndicator startAnimating];
+    [_activityView addSubview:_activityIndicator];
+    
+    [_mainWindow addSubview:_activityView];
+    
+    [UIView animateWithDuration:0.5 animations:^{
+        
+        [self.tableView setFrame:CGRectMake(0, 110, 320, 480)]; } completion:^(BOOL finished) { [NSTimer scheduledTimerWithTimeInterval:2.0 target:self selector:@selector(removeActivitySpinner) userInfo:nil repeats:NO];
+            
+        }];
+}
+
+-(void)removeActivitySpinner {
+    [_activityIndicator stopAnimating];
+    [_activityView removeFromSuperview];
+    [UIView animateWithDuration:0.250 animations:^{
+        CGRect currentTableRect = self.tableView.frame;
+        [self.tableView setFrame:CGRectMake(0, 110 - 60, currentTableRect.size.width,currentTableRect.size.height)];
+    }];
+}
+
 
 
 
