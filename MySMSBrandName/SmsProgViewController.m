@@ -12,6 +12,7 @@
 #import "smsProg.h"
 #import "SmsProgCell.h"
 #import "SmsProgDetailViewController.h"
+#import "SmsProgViewController+SearchBar.h"
 
 
 @interface SmsProgViewController ()
@@ -21,7 +22,6 @@
 @end
 
 @implementation SmsProgViewController
-
 
 
 -(instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
@@ -37,12 +37,16 @@
         [self.navigationController.navigationBar setTitleTextAttributes:
          @{NSForegroundColorAttributeName:[UIColor redColor],
            NSFontAttributeName:[UIFont fontWithName:@"Helvetica Neue" size:13]}];
+        
+        _filteredTableData = [[NSMutableArray alloc] init];
     }
     
     return self;
 }
 
 - (IBAction)addNewRowTap:(id)sender {
+    
+    NSLog(@"tap 'Add New Row'");
     
     NSIndexPath *idxPath = [NSIndexPath indexPathForRow:0 inSection:0];
     
@@ -53,9 +57,6 @@
 -(void)viewWillAppear:(BOOL)animated {
     
     [super viewWillAppear:animated];
-    
-    //[self.navigationController setNavigationBarHidden:YES animated:animated];
-    
 }
 
 -(void)viewDidAppear:(BOOL)animated {
@@ -71,7 +72,6 @@
     [self.tableView deselectRowAtIndexPath:selectedIndexPath animated:animated];
     
     originTableInSuperview = [self.mainWindow convertPoint:CGPointMake(0, 0) fromView:self.tableView];
-
 }
 
 - (void)viewDidLoad {
@@ -93,17 +93,125 @@
         footerView.delegate = self;
         [self.tableView addSubview:footerView];
     }
-    
+     
     [self loadSmsProgs:loadedPageIdx pageSize:10];
     
-}
-
-
-
-- (void)addSmsProg{
     
-    NSLog(@"Da nhan addSmsProg");
+    //set up search controller
+    self.searchController = [[UISearchController alloc] initWithSearchResultsController:nil];
+    self.searchController.searchResultsUpdater = self;
+    self.searchController.dimsBackgroundDuringPresentation = NO;
+    self.searchController.searchBar.scopeButtonTitles = @[@"Prog Code", @"Prog Status"];
+    
+    self.searchController.searchBar.delegate = self;
+    self.tableView.tableHeaderView = self.searchController.searchBar;
+    
+    self.definesPresentationContext = YES;
+    
+    self.searchController.delegate = self;
+    
+    [self.searchController.searchBar sizeToFit];
+    
+    [self.searchController.searchBar.superview setBackgroundColor:[UIColor whiteColor]];
+    
 }
+
+- (void)listSubviewsOfView:(UIView *)view level:(int)level {
+    
+    // Get the subviews of the view
+    NSArray *subviews = [view subviews];
+    
+    // Return if there are no subviews
+    if ([subviews count] == 0) return; // COUNT CHECK LINE
+    
+    for (UIView *subview in subviews) {
+        
+        // Do what you want to do with the subview
+        NSLog(@"level %d: %@", level, subview);
+        
+        // List the subviews of subview
+        [self listSubviewsOfView:subview level:level+1];
+    }
+}
+
+-(BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar {
+    
+ 
+    int heightMoveUp = -[[UIApplication sharedApplication] statusBarFrame].size.height -self.navigationController.navigationBar.frame.size.height;
+    
+    [UIView animateWithDuration:0 animations:^{
+        
+        [_addNewRowView setFrame:CGRectMake(0, heightMoveUp, _addNewRowView.frame.size.width, _addNewRowView.frame.size.height)];
+    }];
+ 
+    return YES;
+}
+
+-(void)searchBarTextDidEndEditing:(UISearchBar *)searchBar {
+    
+
+    [UIView animateWithDuration:0.1 animations:^{
+        
+        [_addNewRowView setFrame:CGRectMake(0, 0, _addNewRowView.frame.size.width, _addNewRowView.frame.size.height)];
+    } completion:^(BOOL finished) {
+        
+    }];
+}
+
+- (void)searchBar:(UISearchBar *)searchBar selectedScopeButtonIndexDidChange:(NSInteger)selectedScope
+{
+    [self updateSearchResultsForSearchController:self.searchController];
+}
+
+- (void)didChangePreferredContentSize:(NSNotification *)notification
+{
+    [self reloadData];
+}
+
+- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller
+{
+    [self reloadData];
+}
+
+
+-(void)updateSearchResultsForSearchController:(UISearchController *)searchController {
+    
+    NSString *searchString = searchController.searchBar.text;
+    
+    if(self.filteredTableData) {
+    
+        [self.filteredTableData removeAllObjects];
+    }
+    
+    [self searchForText:searchString scope:searchController.searchBar.selectedScopeButtonIndex];
+    [self reloadData];
+}
+
+
+- (void)searchForText:(NSString *)searchText scope:(SmsProgSearchScope)scopeOption {
+    
+    for (smsProg *smsProgEntity in self.smsProgs) {
+        
+        if (scopeOption == searchScopeProgStatus) { //search by prog status
+            
+            if([[smsProgEntity.status lowercaseString] containsString:[searchText lowercaseString]]) {
+                
+                [self.filteredTableData addObject:smsProgEntity];
+                NSLog(@"Matched prog_code/prog_staus: %@", smsProgEntity);
+            }
+        } else {
+            
+            if([[smsProgEntity.prog_code lowercaseString] containsString:[searchText lowercaseString]]) {
+                
+                [self.filteredTableData addObject:smsProgEntity];
+                NSLog(@"Matched prog_code: %@", smsProgEntity);
+            }
+            
+        }
+    }
+}
+
+
 
 -(BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
     
@@ -195,12 +303,17 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return _smsProgs.count;
+    if (self.searchController.active)
+    {
+        return [self.filteredTableData count];
+    }
+    else
+    {
+        return _smsProgs.count;
+    }
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
     
     return 1;
 }
@@ -223,7 +336,16 @@
     cell.indexPath = indexPath;
     
     
-    smsProg *objSmsProg = [self.smsProgs objectAtIndex:indexPath.section];
+    smsProg *objSmsProg = [[smsProg alloc] init];
+    
+    if (self.searchController.active)
+    {
+        objSmsProg = [self.filteredTableData objectAtIndex:indexPath.section];
+    }
+    else
+    {
+        objSmsProg  = [self.smsProgs objectAtIndex:indexPath.section];
+    }
     
     
     // Configure the cell...
@@ -318,7 +440,17 @@
     NSDateFormatter *dateTimeFormat = [[NSDateFormatter alloc] init];
     [dateTimeFormat setDateFormat:@"dd/MM/yyyy HH:mm"];
     
-    NSString *date = [[_smsProgs objectAtIndex:section] valueForKey:@"created_date"];
+    NSString *date;
+    
+    if(self.searchController.active) {
+        
+        date = [[_filteredTableData objectAtIndex:section] valueForKey:@"created_date"];
+    } else {
+        
+        date = [[_smsProgs objectAtIndex:section] valueForKey:@"created_date"];
+    }
+    
+    
     NSCalendar *gregorianCalendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
     NSDateComponents *components = [gregorianCalendar components:NSCalendarUnitDay
                                                         fromDate:[dateTimeFormat dateFromString:date]
@@ -425,13 +557,11 @@
 -(void)removeActivitySpinner {
     [_activityIndicator stopAnimating];
     [_activityView removeFromSuperview];
-    [UIView animateWithDuration:0.250 animations:^{
+    [UIView animateWithDuration:0 animations:^{
         CGRect currentTableRect = self.tableView.frame;
         [self.tableView setFrame:CGRectMake(0, 110 - 60, currentTableRect.size.width,currentTableRect.size.height)];
     }];
 }
-
-
 
 
 /*

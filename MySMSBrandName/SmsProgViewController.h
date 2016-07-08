@@ -12,11 +12,12 @@
 #import <SlideNavigationController.h>
 #import "SmsProgCell.h"
 
+
 @protocol SmsProgViewDelegate;
 
 
 
-@interface SmsProgViewController : UIViewController <LoadMoreTableFooterDelegate, SlideNavigationControllerDelegate, SmsProgCellDelegate> {
+@interface SmsProgViewController : UIViewController <LoadMoreTableFooterDelegate, SlideNavigationControllerDelegate, SmsProgCellDelegate, UISearchResultsUpdating, UISearchBarDelegate, UISearchControllerDelegate> {
     
     LoadMoreTalbeFooterView *footerView;
     int loadedPageIdx;
@@ -28,6 +29,8 @@
 @property (weak, nonatomic) IBOutlet UIView *addNewRowView;
 
 @property (nonatomic, readwrite) NSMutableArray *smsProgs;
+
+
 @property (nonatomic) NSString *token;
 @property (nonatomic) id <SmsProgViewDelegate> delegate;
 
@@ -47,8 +50,24 @@
 @property (strong, nonatomic) IBOutlet UITapGestureRecognizer *myTabGestureRecognizer;
 @property (nonatomic, strong) NSIndexPath *swipedCellIndexPath;
 
+
 - (IBAction)addNewRowTap:(id)sender;
 -(void)didSwipeLeftInCellWithIndexPath:(NSIndexPath *)indexPath;
+
+//properties of search controller
+@property (strong, nonatomic) UISearchController *searchController;
+@property (nonatomic, strong) NSMutableArray *filteredTableData;
+
+typedef NS_ENUM(NSInteger, SmsProgSearchScope)
+{
+    searchScopeProgCode = 0,
+    searchScopeProgStatus = 1
+};
+
+- (void)searchForText:(NSString *)searchText scope:(SmsProgSearchScope)scopeOption;
+- (void)setupSearchController:(SmsProgViewController *)objSmsProgViewController;
+
+
 @end
 
 

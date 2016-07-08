@@ -20,10 +20,22 @@
         _prog_code = @"ProgCode_NEW";
         _alias = @"Alias_NEW";
         _status = @"Status_NEW";
-        _created_date = @"CreatedDate_NEW";
+        
+        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+        [formatter setDateFormat:@"dd/MM/yyyy HH:mm"];
+        
+        //Optionally for time zone conversions
+        [formatter setTimeZone:[NSTimeZone timeZoneWithName:@"..."]];
+        
+       _created_date = [formatter stringFromDate:[NSDate date]];
     }
     return self;
 }
 
+-(NSString *)description {
+    
+    return @"";
+   // return [NSString stringWithFormat:@"%@ - %@", _prog_code, _status];
+}
 
 @end
