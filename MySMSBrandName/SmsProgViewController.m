@@ -111,9 +111,6 @@
     self.searchController.delegate = self;
     
     [self.searchController.searchBar sizeToFit];
-    
-    [self.searchController.searchBar.superview setBackgroundColor:[UIColor whiteColor]];
-    
 }
 
 - (void)listSubviewsOfView:(UIView *)view level:(int)level {
