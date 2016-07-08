@@ -12,7 +12,7 @@
 #import "smsProg.h"
 #import "SmsProgCell.h"
 #import "SmsProgDetailViewController.h"
-#import "SmsProgViewController+SearchBar.h"
+
 
 
 @interface SmsProgViewController ()
